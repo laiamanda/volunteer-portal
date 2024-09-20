@@ -6,11 +6,10 @@
 * Create a login page where user can login into the website
 
 ## To Do Tasks:
-* Install pug
-* Add .env
-* Add git init
-* Add gitignore
-* Add a Git Repo
 * Make routes
-* Get /view and index page to run
+* Install body parser
+* Create a homepage
+* Create a form where users can upload their hours
+* Create a sign up page
+* Create a change-log page
 * Get npm start to work
