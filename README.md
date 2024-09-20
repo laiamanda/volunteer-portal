@@ -1,15 +1,12 @@
-Compile Code: npx tsc
-Run Code: npm run dev
+# Volunteer Portal
 
-To Do: Get npm start to work
-
-Description:
+## Description:
 * To keep track of users hours and their volunteer
 
-Tasks:
-* Install pug
-* Add .env
-* Add git init
-* Add gitignore
-* Make routes
-* Get index page to run
+## Development
+
+Set up: npm install
+
+Compile Code: npx tsc
+
+Run Code: npm run dev
