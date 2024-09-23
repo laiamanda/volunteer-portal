@@ -6,12 +6,20 @@ head
   link(rel='stylesheet' type='text/css' href='/css/style.css')
 
 body
-  h1 Volunteer Portal
-
-  form(method='#')
-    label Name
-    input(type='text')
-    label Hours
-    input(type='number')
-    button(type='submit') Submit
+  include /global/header
+  form(method='POST')
+    table
+      tr
+        td
+          label Name
+        td
+          input(type='text' name='name')
+      tr
+        td
+          label Hours
+        td
+          input(type='number' name='hours')
+      tr
+        td
+          button(type='submit') Submit
   a(href='/') Back

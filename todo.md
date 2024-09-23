@@ -7,7 +7,12 @@
 
 ## To Do Tasks:
 * Make routes
-* Install body parser
+* Add Styling
+  * Add a stylish header
+  * Add a font
+  * Import fontawesome
+  * Style Form
+  * Style buttons
 * Create a homepage
 * Create a form where users can upload their hours
 * Create a sign up page

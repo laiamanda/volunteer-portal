@@ -1,3 +1,15 @@
-/* body {
-  background-color: red;
-} */
+@import "/css/global/text.css";
+
+header {
+  background-color: #525FE1;
+  color: #fff;
+  padding: 0.5em;
+}
+
+header a {
+  color: #fff;
+}
+
+table tr td {
+  border: 1px solid #000;
+}
