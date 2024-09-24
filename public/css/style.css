@@ -1,15 +1,45 @@
 @import "/css/global/text.css";
 
+* {
+  font-family: Roboto, Arial, sans-serif;
+}
+/*  HEADER */
 header {
-  background-color: #525FE1;
+  background: #525FE1;
   color: #fff;
-  padding: 0.5em;
+  font-size: 16px;
+  padding: 1.5rem;
 }
 
+header i{
+  margin-left: 0.5em;
+}
 header a {
   color: #fff;
 }
 
+/*  TABLE */
 table tr td {
   border: 1px solid #000;
+}
+
+/* LAYOUT */
+.m-0 {
+  margin: 0px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.container {
+  margin: 2.5% 10%;
+  position: relative;
+}
+
+.flex-row {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

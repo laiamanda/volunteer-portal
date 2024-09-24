@@ -5,6 +5,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
 
+import { dashboard } from './routes/dashboard';
+import { login } from './routes/auth/login';
+import { signUp } from './routes/auth/sign-up';
+import { edit } from './routes/edit';
+import { editPost } from './routes/edit/edit/edit';
+ 
 const app = express();
 
 // Use body-parser to parse body of POST requests
@@ -19,18 +25,13 @@ app.locals.basedir = path.join(__dirname, '../views');
 // Expose the public directory to clients
 app.use(express.static(path.join(__dirname, '../public')));
 
-// To Do: Need to organize routes
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
-app.get('/edit', (req, res) => {
-  res.render('edit');
-});
-
-app.post('/edit', (req, res) => {
-  console.log(req.body);
-});
+// Routes
+app.use(dashboard);
+/* Auth */
+app.use(signUp);
+app.use(login);
+app.use(edit);
+app.use(editPost);
 
 // Server
 const port = process.env.PORT || 5000;

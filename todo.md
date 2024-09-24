@@ -6,15 +6,19 @@
 * Create a login page where user can login into the website
 
 ## To Do Tasks:
-* Make routes
 * Add Styling
-  * Add a stylish header
-  * Add a font
-  * Import fontawesome
+  * Make header better
   * Style Form
   * Style buttons
-* Create a homepage
-* Create a form where users can upload their hours
-* Create a sign up page
+  * Style Tables
+  * Style login/signup page
+  * Style Edit page
+  * Style dashboard page
+* Connect to a database
+* Display hour on a dashboard
+* Get sign up to work
+* Get login to work
+* Add authentication
+* Create error page
 * Create a change-log page
 * Get npm start to work

@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+head
+  title Sign Up | UpRoar
+  include /global/head
+body
+  include /global/header
+  .container.center
+    h1 Sign Up
+    .flex-row
+      form(method='#')
+        table
+          tr
+            td
+              label(for="username") Username
+            td
+              input(type='text' name='username')
+          tr
+            td
+              label(for="password") Password
+            td
+              input(type='password' name='password')
+          tr
+            td
+              button(type='submit' name='submit') Sign Up
