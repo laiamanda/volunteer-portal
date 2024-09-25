@@ -7,18 +7,12 @@
 
 ## To Do Tasks:
 * Add Styling
-  * Make header better
-  * Style Form
-  * Style buttons
-  * Style Tables
-  * Style login/signup page
-  * Style Edit page
-  * Style dashboard page
+  * Make navbar more responsive
 * Connect to a database
 * Display hour on a dashboard
 * Get sign up to work
 * Get login to work
 * Add authentication
-* Create error page
+* Create error page and error page handling
 * Create a change-log page
 * Get npm start to work

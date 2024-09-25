@@ -7,19 +7,20 @@ head
 
 body
   include /global/header
-  form(method='POST')
-    table
-      tr
-        td
-          label Name
-        td
-          input(type='text' name='name')
-      tr
-        td
-          label Hours
-        td
-          input(type='number' name='hours')
-      tr
-        td
-          button(type='submit') Submit
-  a(href='/') Back
+  .container.center
+    h2 Add Hours
+    .flex-row
+      form(method='post')
+        table.table-layout-form.table-style-default
+          tr
+            td
+              label Name
+            td
+              input(type='text' name='name')
+          tr
+            td
+              label Hours
+            td
+              input(type='number' name='hours')
+        button.btn(type='submit') Submit
+  a.btn.btn-cancel(href='/') Back

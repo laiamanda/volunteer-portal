@@ -5,5 +5,20 @@ head
   include /global/head
 body
   include /global/header
-  h1 Login
-  h2 Under Construction
+  .container.center
+    h1 Login
+    .flex-row
+      form
+        table.table-layout-form.table-style-default
+          tr
+            td
+              label(for='username') Username
+            td
+              input(type='text' name='username')
+          tr
+            td
+              label(for='password') Password
+            td
+              input(type='password' name='password')
+        button.btn(type='submit') Login
+    a(href='/auth/sign-up') Don't have an account? Sign Up

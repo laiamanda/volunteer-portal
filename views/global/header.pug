@@ -1,10 +1,12 @@
 header
-  h1 UpRoar
+  h1.logo UpRoar
     i(class='fa fa-handshake-o')
-  p Version 1.0.0-alpha
-  h2 Dashboard
-  a(href='#') Username
-  br
-  a(href='/auth/sign-up') Sign Up
-  br
-  a(href='/auth/login') Login
+  ul.nav
+    li.nav-link 
+      a(href='/') Dashboard
+    li.nav-link 
+      a(href='/edit') Add
+    li.nav-link 
+      a(href='/auth/sign-up') Sign Up
+  div.burger 
+    i(class='fa fa-bars')
