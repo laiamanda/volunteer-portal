@@ -30,8 +30,14 @@ app.use(dashboard);
 /* Auth */
 app.use(signUp);
 app.use(login);
+// Edit Route
 app.use(edit);
 app.use(editPost);
+
+// This route will handle all requests that are not handle by others
+app.all('*', (req, res) => {
+  res.status(404).send('Page not found');
+});
 
 // Server
 const port = process.env.PORT || 5000;

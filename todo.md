@@ -8,11 +8,11 @@
 ## To Do Tasks:
 * Add Styling
   * Make navbar more responsive
+  * Style Error page
 * Connect to a database
+* Store user sign up information
+* Store hours of users
 * Display hour on a dashboard
-* Get sign up to work
-* Get login to work
 * Add authentication
-* Create error page and error page handling
 * Create a change-log page
 * Get npm start to work
