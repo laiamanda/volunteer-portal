@@ -8,10 +8,10 @@
 ## To Do Tasks:
 * Add Styling
   * Make navbar more responsive
-  * Style Error page
-* Connect to a database
-* Store user sign up information
-* Store hours of users
+  * Add favicon
+* Database
+  * Store hours of users
+  * Store user sign up information
 * Display hour on a dashboard
 * Add authentication
 * Create a change-log page

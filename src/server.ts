@@ -4,6 +4,9 @@ dotenv.config();
 import express from 'express';
 import bodyParser from 'body-parser';
 import path from 'path';
+import db from './util/database';
+import store from 'connect-pg-simple';
+import session from 'express-session';
 
 import { dashboard } from './routes/dashboard';
 import { login } from './routes/auth/login';
@@ -25,6 +28,21 @@ app.locals.basedir = path.join(__dirname, '../views');
 // Expose the public directory to clients
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.use(
+  session({
+    name: 'volunteer-portal-session',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      secure: true,
+    },
+    secret: 'secret-secret',
+    store: new(store(session))({ 
+      pool: db,
+    })
+}));
+
+
 // Routes
 app.use(dashboard);
 /* Auth */
@@ -36,7 +54,8 @@ app.use(editPost);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {
-  res.status(404).send('Page not found');
+  // res.status(404).send('Page not found');
+  res.render('./error', {error: res.status(404)});
 });
 
 // Server
