@@ -10,9 +10,11 @@
   * Make navbar more responsive
   * Add favicon
 * Database
-  * Store hours of users
+  * Update user scheme
+    * Store createddate, firstname, lastname, email
   * Store user sign up information
 * Display hour on a dashboard
 * Add authentication
+* Add Encryption
 * Create a change-log page
 * Get npm start to work

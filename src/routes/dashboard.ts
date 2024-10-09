@@ -4,9 +4,6 @@ import db from '../util/database';
 export const dashboard = Router();
 
 dashboard.get('/', (req, res) => {
-  // const value = 
-  // console.log(value);
-
   res.render('index');
 });
 
