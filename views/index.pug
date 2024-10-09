@@ -10,3 +10,5 @@ body
   .container.center
     h2.center Add Volunteer Hours
     a.btn(href='/edit') Add Hours
+    for info in data
+      p #{info.user} #{info.number_of_hours}

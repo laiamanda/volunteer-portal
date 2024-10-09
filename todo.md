@@ -15,8 +15,10 @@
   * Store user sign up information
 * Edit Page
   * Readjust go back button
-* Display hour on a dashboard
-* Add authentication
-* Add Encryption
+* Dashboard
+  * Display hours with datatables
+* Auth
+  * Add authentication
+  * Add Encryption
 * Create a change-log page
 * Get npm start to work
