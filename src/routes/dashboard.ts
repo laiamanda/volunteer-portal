@@ -3,13 +3,11 @@ import db from '../util/database';
 
 export const dashboard = Router();
 
-dashboard.get('/', (req, res) => {
-  res.render('index');
+dashboard.get('/', async (req, res) => {
+  const data = await db.query('SELECT * FROM "public"."test"');
+  console.log(data.rows);
+
+  res.render('index', {
+    data: data,
+  });
 });
-
-// async function call() {
-//   const data = await db.query('SELECT * FROM "public"."test"');
-//   console.log(data.rows);
-// }
-
-// call();

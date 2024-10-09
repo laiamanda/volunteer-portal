@@ -12,7 +12,6 @@ import { dashboard } from './routes/dashboard';
 import { login } from './routes/auth/login';
 import { signUp } from './routes/auth/sign-up';
 import { edit } from './routes/edit';
-import { editPost } from './routes/edit/edit/edit';
  
 const app = express();
 
@@ -50,7 +49,6 @@ app.use(signUp);
 app.use(login);
 // Edit Route
 app.use(edit);
-app.use(editPost);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {

@@ -6,13 +6,15 @@
 * Create a login page where user can login into the website
 
 ## To Do Tasks:
-* Add Styling
+* Global Styling
   * Make navbar more responsive
   * Add favicon
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
   * Store user sign up information
+* Edit Page
+  * Readjust go back button
 * Display hour on a dashboard
 * Add authentication
 * Add Encryption
