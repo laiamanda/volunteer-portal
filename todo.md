@@ -8,7 +8,7 @@
 ## To Do Tasks:
 * Global Styling
   * Make navbar more responsive
-  * Add favicon
+  * Add favicon - fix it
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
@@ -18,7 +18,10 @@
 * Dashboard
   * Display hours with datatables
 * Auth
-  * Add authentication
+  * Make users have their password to include symbol, number, letter, upper and lower case
+  * Able to login
+  * Add authentication to the page
   * Add Encryption
 * Create a change-log page
+* Install datatables
 * Get npm start to work
