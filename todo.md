@@ -14,7 +14,7 @@
     * Store createddate, firstname, lastname, email
   * Store user sign up information
 * Edit Page
-  * Readjust go back button
+  * 
 * Dashboard
   * Display hours with datatables
 * Auth
