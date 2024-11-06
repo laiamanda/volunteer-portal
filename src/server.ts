@@ -14,6 +14,7 @@ import db from './util/database';
 
 import { dashboard } from './routes/dashboard';
 import { login } from './routes/auth/login';
+import { logout } from './routes/auth/logout';
 import { signUp } from './routes/auth/sign-up';
 import { edit } from './routes/edit';
  
@@ -92,6 +93,7 @@ app.use(dashboard);
 /* Auth */
 app.use(signUp);
 app.use(login);
+app.use(logout);
 // Edit Route
 app.use(edit);
 
