@@ -3,6 +3,7 @@ html(lang='en')
 head
   title  Dashboard | UpRoar
   include /global/head
+  script(src='/js/index.js' type='text/javascript')
 body
   include /global/header
   .container.center
@@ -10,3 +11,5 @@ body
     a.btn(href='/edit') Add Hours
     for info in data
       p #{info.user} #{info.number_of_hours}
+    //- To Do: Initialize dataTables and pass in the data into as an object
+    //- table(id='example' class='display' style='width: 100%')

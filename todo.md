@@ -9,14 +9,17 @@
 * Global Styling
   * Make navbar more responsive
   * Add favicon - fix it
-  * Add logic - where if no user is logged in, display sign-up/login in navbar. If user is logged in
+  * Add logic - where if no user is logged in, display sign-up/login in navbar. If user is logged in, show logout link
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
   * Store user sign up information
 * Edit Page
-  * 
+  * Add input fields
+    * Organization
+    * Position/Role
 * Dashboard
+  * Create a dataTables function to render data into js file
   * Display hours with datatables
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
@@ -25,5 +28,4 @@
   * If failed to sign-up, display error on the page
   * Add log out as an option
 * Create a change-log page
-* Install datatables
 * Get npm start to work

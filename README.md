@@ -9,4 +9,6 @@ Set up: npm install
 
 Compile Code: npx tsc
 
+Build code: npm run-script build
+
 Run Code: npm run dev

@@ -10,4 +10,6 @@ login.get('/auth/login', (req: Request, res: Response) => {
 login.post('/auth/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login'
-}));
+}), (req: Request, res: Response) => {
+  console.log(req.body);
+});
