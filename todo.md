@@ -13,7 +13,8 @@
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
-  * Store user sign up information
+  * Sign Up
+    * Store email
 * Edit Page
   * Add input fields
     * Organization
@@ -23,9 +24,7 @@
   * Display hours with datatables
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
-  * Add authentication to the page
   * If failed to login, display error message on the page
   * If failed to sign-up, display error on the page
-  * Add log out as an option
 * Create a change-log page
 * Get npm start to work

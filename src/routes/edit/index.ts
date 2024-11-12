@@ -9,7 +9,7 @@ export const edit = express.Router();
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
-edit.get('/edit', async (req: Request, res: Response) => {
+edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
   res.render('edit');
 });
 
@@ -18,7 +18,7 @@ edit.get('/edit', async (req: Request, res: Response) => {
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
-edit.post('/edit', async (req: Request, res: Response) => {
+edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
   // console.log(req.user);  
   // TO DO: Retrieve logged-in user information and automatically insert into the database
   // Insert into the database
