@@ -134,6 +134,13 @@ passport.deserializeUser(async (id: string, cb) => {
 
 // app.use(printData);
 
+// Allow every route to have the requested user and if authenticated
+app.use((req, res, next) => {
+  res.locals.__authenticated = req.isAuthenticated();
+  res.locals.__user = req.user;
+  next();
+});
+
 /* ============== ROUTES ============== */
 /* === AUTH ====*/
 app.use(signUp);

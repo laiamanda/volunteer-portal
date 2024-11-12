@@ -9,7 +9,6 @@
 * Global Styling
   * Make navbar more responsive
   * Add favicon - fix it
-  * Add logic - where if no user is logged in, display sign-up/login in navbar. If user is logged in, show logout link
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
