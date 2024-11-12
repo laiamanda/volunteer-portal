@@ -7,7 +7,6 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
-// import crypto from 'crypto';
 import bcrypt from 'bcrypt';
 import store from 'connect-pg-simple';
 import db from './util/database';
@@ -64,36 +63,12 @@ app.use(session({
 // }));
 
 /*=================== PASSPORT =================== */
+// Initialize passport on every route call
 app.use(passport.initialize());
+// Allow passport to use express-session
 app.use(passport.session());
 
-// NON DATABASE VERSION
-// const authUser = (user: any, password: any, done: any) => {
-//   console.log(`Value of User in authUser function: ${user}`);
-//   console.log(`Value of password in authUser function: ${password}`);
-
-//   let authenticated_user = {id: 1213, name: 'Amanda'};
-
-//   return done(null, authenticated_user);
-// }
-  
-// passport.use(new LocalStrategy(authUser));
-// passport.serializeUser((user, done) => {
-//   console.log('Serialize user');
-//   console.log(user);
-
-//   done(null, user); // TO DO: Create a user object
-// });
-
-// passport.deserializeUser((id, done) => {
-//   console.log('Deserialize user');
-//   console.log(id);
-
-//   done(null, {name: 'Amanda', id: 123});
-// });
-
-
-/* DEVELOPMENT: CONNECTED WITH DATABASE */
+// To verify if the username and password matches with what is in the database
 passport.use(new LocalStrategy(async(username: string, password: string, cb: any) => {
   await db.query('SELECT "id", "username", "password" FROM "accounts"."users" WHERE username = $1', [username], (err, result) => {
     if (err) {
@@ -115,11 +90,13 @@ passport.use(new LocalStrategy(async(username: string, password: string, cb: any
   });
 }));
 
-
+// Adds authenticated user to req.session.passport object
 passport.serializeUser((user: any, done) => {
   done(null, user.id);
 });
 
+// Takes the req.session.passport.user to be req.user 
+// and will be authenticated uer object for the session
 passport.deserializeUser(async (id: string, cb) => {
   await db.query(`SELECT id, username FROM "accounts"."users" WHERE "id" = $1`, [parseInt(id, 10)], (err, result) => {
     if(err) {
@@ -129,33 +106,33 @@ passport.deserializeUser(async (id: string, cb) => {
     cb(null, result.rows[0]);
   });
 });
-let count = 1
 
-const printData = (req: any, res: any, next: any) => {
-    console.log("\n==============================")
-    console.log(`------------>  ${count++}`)
+// let count = 1
 
-    // console.log(`req.body.username -------> ${req.body.username}`)
-    // console.log(`req.body.password -------> ${req.body.password}`) 
+// const printData = (req: any, res: any, next: any) => {
+//     console.log("\n==============================")
+//     console.log(`------------>  ${count++}`)
 
-    console.log(`\n req.session.passport -------> `)
-    console.log(req.session.passport)
+//     // console.log(`req.body.username -------> ${req.body.username}`)
+//     // console.log(`req.body.password -------> ${req.body.password}`) 
+
+//     console.log(`\n req.session.passport -------> `)
+//     console.log(req.session.passport)
   
-    console.log(`\n req.user -------> `) 
-    console.log(req.user) 
+//     console.log(`\n req.user -------> `) 
+//     console.log(req.user) 
   
-    console.log("\n Session and Cookie")
-    console.log(`req.session.id -------> ${req.session.id}`) 
-    console.log(`req.session.cookie -------> `) 
-    console.log(req.session.cookie) 
+//     console.log("\n Session and Cookie")
+//     console.log(`req.session.id -------> ${req.session.id}`) 
+//     console.log(`req.session.cookie -------> `) 
+//     console.log(req.session.cookie) 
   
-    console.log("===========================================\n")
+//     console.log("===========================================\n")
 
-    next()
-}
+//     next()
+// }
 
-app.use(printData);
-
+// app.use(printData);
 
 /* ============== ROUTES ============== */
 /* === AUTH ====*/
@@ -170,7 +147,6 @@ app.use(edit);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {
-  // res.status(404).send('Page not found');
   res.render('./error', {error: res.status(404)});
 });
 
