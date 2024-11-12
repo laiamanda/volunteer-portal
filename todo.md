@@ -13,8 +13,6 @@
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
-  * Sign Up
-    * Store email
 * Edit Page
   * Add input fields
     * Organization
