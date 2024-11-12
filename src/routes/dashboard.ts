@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import db from '../util/database';
-import passport from 'passport';
 import * as  auth from '../util/auth'
 
 export const dashboard = Router();

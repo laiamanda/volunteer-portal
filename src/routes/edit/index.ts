@@ -1,15 +1,25 @@
 import express, {Request, Response} from 'express';
 import db from '../../util/database';
+import * as auth from '../../util/auth';
 
 export const edit = express.Router();
 
-// TO DO: Add authenticated user is allowed into the page
-edit.get('/edit', (req: Request, res: Response) => {
+/**
+ * GET /edit
+ * @param req the request sent from the client
+ * @param res the response sent back to the client
+ */
+edit.get('/edit', async (req: Request, res: Response) => {
   res.render('edit');
 });
 
+/**
+ * POST /edit
+ * @param req the request sent from the client
+ * @param res the response sent back to the client
+ */
 edit.post('/edit', async (req: Request, res: Response) => {
-  console.log(req.body);  
+  // console.log(req.user);  
   // TO DO: Retrieve logged-in user information and automatically insert into the database
   // Insert into the database
   const row = await db.query(`
@@ -26,5 +36,3 @@ edit.post('/edit', async (req: Request, res: Response) => {
 
   return res.redirect('/');
 });
-
-// import * as editPost from './edit/edit';

@@ -34,13 +34,13 @@ app.locals.basedir = path.join(__dirname, '../views');
 // Expose the public directory to clients
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Store sessions
+// Store sessions in the PostgreSQL database
 app.use(session({
     name: 'volunteer-portal-session',
     secret: 'secret',
-    resave: false,
+    resave: true,
     saveUninitialized: true,
-    // cookie: {
+    // cookie: { /* TO DO: Figure out cookies */
     //   secure: true,
     // },
     store: new(store(session))({ 
@@ -105,7 +105,6 @@ passport.use(new LocalStrategy(async(username: string, password: string, cb: any
       bcrypt.compare(password, first.password, function(err, res) {
         if(res) {
           cb(null, {id: first.id, username: first.username});
-          // console.log(first.id, first.username);
         } else {
           cb(null,false, {message: "[Error]: Unable to compare hash and password."});
         }
@@ -123,14 +122,12 @@ passport.serializeUser((user: any, done) => {
 
 passport.deserializeUser(async (id: string, cb) => {
   await db.query(`SELECT id, username FROM "accounts"."users" WHERE "id" = $1`, [parseInt(id, 10)], (err, result) => {
-      if(err) {
-        console.log('Error when selecting user on session deserialize: ' + err);
-        return cb(err);
-      }
-      cb(null, result.rows[0]);
-    });
-  // await db.query(`SELECT id, username FROM "accounts"."users WHERE "id" = $1`, [parseInt(id, 10)], (err, result) => {
-  // });
+    if(err) {
+      console.log('Error when selecting user on session deserialize: ' + err);
+      return cb(err);
+    }
+    cb(null, result.rows[0]);
+  });
 });
 let count = 1
 
