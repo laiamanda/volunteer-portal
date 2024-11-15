@@ -1,37 +1,37 @@
 doctype html
 html(lang='en')
-head
-  title Edit | UpRoar
-  include /global/head.pug
-body
-  include /global/header
-  .container.center
-    h2 Add Hours
-    .flex-row
-      form(method='post')
-        table.table-layout-form.table-style-default
-          tr
-            td
-              label Name
-            td
-              input(type='text' name='name')
-          tr
-            td
-              label Organization
-            td
-              input(type='text' name='organization')
-          tr
-            td
-              label Position/Role
-            td
-              input(type='text' name='role')
-          tr
-            td
-              label Hours
-            td
-              input(type='number' name='hours')
+  head
+    title Edit | UpRoar
+    include /global/head.pug
+  body
+    include /global/header
+    .container.center
+      h2 Add Hours
+      .flex-row
+        form(method='post')
+          table.table-layout-form.table-style-default
+            tr
+              td
+                label Name
+              td
+                input(type='text' name='name')
+            tr
+              td
+                label Organization
+              td
+                input(type='text' name='organization')
+            tr
+              td
+                label Position/Role
+              td
+                input(type='text' name='role')
+            tr
+              td
+                label Hours
+              td
+                input(type='number' name='hours')
 
-        .flex-row
-          a.btn.btn-cancel(href='/') Back
-          button.btn(type='submit') Submit
+          .flex-row
+            a.btn.btn-cancel(href='/') Back
+            button.btn(type='submit') Submit
           

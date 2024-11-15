@@ -8,11 +8,11 @@
 ## To Do Tasks:
 * Global Styling
   * Make navbar more responsive
-  * Add favicon - Bug
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
 * Edit Page
+  * Add organization and roles into the database and ts file
 * Dashboard
   * Create a dataTables function to render data into js file
   * Display hours with datatables

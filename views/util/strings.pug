@@ -1,0 +1,12 @@
+-
+  function toHumanString(value, type) {
+    if(Array.isArray(value)) {
+      return value.map((el) => toHumanString(el, type)).join(', ');
+    } else if (type === 'boolean') {
+      return value ? 'Yes' : 'No';
+    } else if (type === 'object') {
+      return Object.entries(value).map(([key, val]) => `${key}: ${toHumanString(val)}`).join(', ');
+    } else {
+      return value;
+    }
+  }

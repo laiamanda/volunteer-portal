@@ -1,19 +1,20 @@
 doctype html
 html(lang='en')
-head
-  title  Dashboard | UpRoar
-  include /global/head.pug
-  include /global/datatables.pug
-body
-  include /global/header
-  
-  .container.center
-    h2.center Add Volunteer Hours
-    a.btn(href='/edit') Add Hours
-    //- for info in data
-    //-   p #{info.user} #{info.number_of_hours}
-    //- To Do: Initialize dataTables and pass in the data into as an object
-    table(id='example' class='display' style='width: 100%')
+  head
+    title  Dashboard | UpRoar
+    include /global/head.pug
+    include /global/datatables.pug
+    
+  body
+    include /global/header
+    .container.center
+      h2.center Add Volunteer Hours
+      a.btn(href='/edit') Add Hours
+      //- for info in data
+      //-   p #{info.user} #{info.number_of_hours}
+      //- To Do: Initialize dataTables and pass in the data into as an object
+      table(id='example' class='display' style='width: 100%')
 
-  //- TO DO: Figure out a way to put scripts in the header
-  script(src='/js/index.js' type='text/javascript') 
+    //- TO DO: Figure out a way to put scripts in the header
+    script(src='/js/index.js' type='text/javascript') 
+  

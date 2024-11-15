@@ -1,24 +1,24 @@
 doctype html
 html(lang='en')
-head
-  title Sign Up | UpRoar
-  include /global/head
-body
-  include /global/header
-  .container.center
-    h1 Sign Up
-    .flex-row
-      form(method='post')
-        table.table-layout-form.table-style-default
-          tr
-            td
-              label(for='username') Username
-            td
-              input(type='text' name='username' required)
-          tr
-            td
-              label(for='password') Password
-            td
-              input(type='password' name='password' required)
-        button.btn(type='submit') Sign Up
-    a(href='/auth/login') Already have an account? Login
+  head
+    title Sign Up | UpRoar
+    include /global/head
+  body
+    include /global/header
+    .container.center
+      h1 Sign Up
+      .flex-row
+        form(method='post')
+          table.table-layout-form.table-style-default
+            tr
+              td
+                label(for='username') Username
+              td
+                input(type='text' name='username' required)
+            tr
+              td
+                label(for='password') Password
+              td
+                input(type='password' name='password' required)
+          button.btn(type='submit') Sign Up
+      a(href='/auth/login') Already have an account? Login
