@@ -1,3 +1,5 @@
+include strings.pug 
+
 mixin dataTable(columns, rows, options={})
   table(id=options.id class=(options.class || ['table-style-default']))
     thead
@@ -9,3 +11,6 @@ mixin dataTable(columns, rows, options={})
         tr
           for column in columns
             td= toHumanString(row[column.key], column.type)
+
+mixin test
+  p Mixin working

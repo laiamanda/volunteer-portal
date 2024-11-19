@@ -14,7 +14,8 @@ dashboard.get('/', auth.loggedIn, async (req, res) => {
     await db.query('SELECT * FROM "volunteer_entries"."entries"')
   ).rows;
 
-  console.log(req.user); // To Do: Remove this later
+  // console.log(req.user); // To Do: Remove this later
+  console.log(data);
 
   res.render('index', {
     data: data,

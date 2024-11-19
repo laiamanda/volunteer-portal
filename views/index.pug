@@ -1,20 +1,37 @@
+-
+ const columns = [
+  {key: 'id', type: 'integer', label: 'Id'},
+  {key: 'user', type: 'string', label: 'User'},
+  {key: 'number_of_hours', type: 'integer', label: 'Number of Hours'}
+ ];
+
 doctype html
 html(lang='en')
   head
     title  Dashboard | UpRoar
     include /global/head.pug
     include /global/datatables.pug
-    
+    include /util/tables.pug
+    script(type='text/javascript').
+      const columns = !{interpolate(columns)};
+    script(src='/js/util/datatables.js' type='text/javascript')  
   body
     include /global/header
     .container.center
+      h2 Welcome back: #{__user.username}
       h2.center Add Volunteer Hours
       a.btn(href='/edit') Add Hours
       //- for info in data
       //-   p #{info.user} #{info.number_of_hours}
       //- To Do: Initialize dataTables and pass in the data into as an object
-      table(id='example' class='display' style='width: 100%')
+      //- table(id='example' class='display' style='width: 100%')
+      +dataTable(columns, data, {
+        id: 'dashboard-table',
+        class: [],
+      })
+      +test
 
     //- TO DO: Figure out a way to put scripts in the header
+    
     script(src='/js/index.js' type='text/javascript') 
   

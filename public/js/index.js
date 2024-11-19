@@ -1,12 +1,3 @@
-// let table = new DataTable('#example', {
-// });
-
-// new DataTable('#example', {
-//   search: {
-//     return: true,
-//   }
-// });
-
 // console.log(data);
 // var dataSet = [
 //     ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800'],
@@ -64,3 +55,6 @@
 //         $(this).hide();
 //     });
 // });
+
+let dashboardTable = undefined;
+initializeDataTable('#dashboard-table', columns, {}, (table) => { dashboardTable = table });
