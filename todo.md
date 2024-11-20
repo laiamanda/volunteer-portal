@@ -14,8 +14,7 @@
 * Edit Page
   * Add organization and roles into the database and ts file
 * Dashboard
-  * Create a dataTables function to render data into js file
-  * Display hours with datatables
+  * Style the DataTable - Looking funky right now
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
   * If failed to login, display error message on the page

@@ -14,7 +14,8 @@ html(lang='en')
     include /util/tables.pug
     script(type='text/javascript').
       const columns = !{interpolate(columns)};
-    script(src='/js/util/datatables.js' type='text/javascript')  
+    script(src='/js/util/datatables.js' type='text/javascript')
+    script(src='/js/index.js' type='text/javascript')   
   body
     include /global/header
     .container.center
@@ -28,10 +29,4 @@ html(lang='en')
       +dataTable(columns, data, {
         id: 'dashboard-table',
         class: [],
-      })
-      +test
-
-    //- TO DO: Figure out a way to put scripts in the header
-    
-    script(src='/js/index.js' type='text/javascript') 
-  
+      })   

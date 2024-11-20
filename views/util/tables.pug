@@ -11,6 +11,3 @@ mixin dataTable(columns, rows, options={})
         tr
           for column in columns
             td= toHumanString(row[column.key], column.type)
-
-mixin test
-  p Mixin working

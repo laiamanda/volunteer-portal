@@ -57,4 +57,9 @@
 // });
 
 let dashboardTable = undefined;
-initializeDataTable('#dashboard-table', columns, {}, (table) => { dashboardTable = table });
+initializeDataTable(
+    '#dashboard-table',
+     columns,
+    {},
+    (table) =>  dashboardTable = table,
+);

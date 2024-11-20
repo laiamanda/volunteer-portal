@@ -15,7 +15,7 @@ dashboard.get('/', auth.loggedIn, async (req, res) => {
   ).rows;
 
   // console.log(req.user); // To Do: Remove this later
-  console.log(data);
+  // console.log(data);
 
   res.render('index', {
     data: data,
