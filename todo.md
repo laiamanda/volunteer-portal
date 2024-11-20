@@ -8,13 +8,19 @@
 ## To Do Tasks:
 * Global Styling
   * Make navbar more responsive
+  * Style used link
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
+  * Update volunteer entries
+    * Store Organization, Role
 * Edit Page
   * Add organization and roles into the database and ts file
 * Dashboard
   * Style the DataTable - Looking funky right now
+  * Add a nice welcome banner
+    * To Returning users
+    * To new users
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
   * If failed to login, display error message on the page
