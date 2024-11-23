@@ -22,5 +22,7 @@ CREATE SCHEMA IF NOT EXISTS "volunteer_entries";
 CREATE TABLE IF NOT EXISTS "volunteer_entries"."entries" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "user" TEXT NOT NULL,
-  "number_of_hours" INTEGER NOT NULL
+  "organization" TEXT NOT NULL,
+  "role" TEXT,
+  "number_of_hours" INTEGER NOT NULL,
 );

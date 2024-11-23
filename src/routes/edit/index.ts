@@ -22,15 +22,21 @@ edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
   // console.log(req.user);  
   // TO DO: Retrieve logged-in user information and automatically insert into the database
   // Insert into the database
+
+  // TO DO: Drop the table in the db and reorganize columns
   const row = await db.query(`
     INSERT INTO "volunteer_entries"."entries" (
       "user",
-      "number_of_hours"
+      "number_of_hours",
+      "organization",
+      "role"
     )
-    VALUES($1, $2) 
+    VALUES($1, $2, $3, $4) 
     `, [
       req.body.name,
       req.body.hours,
+      req.body.organization,
+      req.body.role,
     ]
   );
 
