@@ -12,10 +12,8 @@
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
-  * Update volunteer entries
-    * Store Organization, Role
 * Edit Page
-  * Add organization and roles into the database and ts file
+  * Add a drop-down menu for organization
 * Dashboard
   * Style the DataTable - Looking funky right now
   * Add a nice welcome banner
