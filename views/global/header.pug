@@ -14,3 +14,6 @@ header
         a(href='/auth/sign-up') Sign Up/Login
   div.burger 
     i(class='fa fa-bars')
+br
+.status-bar#error-banner(style={display: __status.errorText ? 'block' : 'none'})
+  p #[i.fa.fa-exclamation-circle] #[span.bar-message= __status.errorText]

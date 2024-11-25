@@ -1,0 +1,10 @@
+.status-bar {
+  color: #fff;
+  margin: 0.5% 2.5%;
+  padding: 1%;
+  border-radius: 5px;
+}
+
+#error-banner {
+  background-color: #F80312;
+}

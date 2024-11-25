@@ -19,5 +19,5 @@ login.get('/auth/login', (req: Request, res: Response) => {
  */
 login.post('/auth/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login'
+  failureRedirect: '/auth/login/?error=error'
 }));
