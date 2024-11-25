@@ -21,27 +21,30 @@ signUp.get('/auth/sign-up', (req: Request, res: Response) => {
 signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
   const saltRounds = 10;
 
-  bcrypt.genSalt(saltRounds, (error, salt) => {
-    if (error) {
-      return;
-    }
-    bcrypt.hash(req.body.password, salt, async (error, hash) => {
+  try {
+    bcrypt.genSalt(saltRounds, (error, salt) => {
       if (error) {
-        return error;
+        return;
       }
-      console.log('Hashed: ' + hash);
-
-      const entry = await db.query(`
-        INSERT INTO "accounts"."users" (
-          "username",
-          "password"
-        ) VALUES ($1, $2)
-        `, [
-          req.body.username,
-          hash
-        ]);
+      bcrypt.hash(req.body.password, salt, async (error, hash) => {
+        if (error) {
+          return error;
+        }
+        console.log('Hashed: ' + hash);
+  
+        const entry = await db.query(`
+          INSERT INTO "accounts"."users" (
+            "username",
+            "password"
+          ) VALUES ($1, $2)
+          `, [
+            req.body.username,
+            hash
+          ]);
+      });
     });
-  });
-
-  return res.redirect('/');
+    return res.redirect('/');
+  } catch(error) {
+    return res.redirect('/auth/sign-up/?error=error');
+  }
 });
