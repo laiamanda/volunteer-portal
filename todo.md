@@ -8,7 +8,6 @@
 ## To Do Tasks:
 * Global Styling
   * Make navbar more responsive
-  * Style used link
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email

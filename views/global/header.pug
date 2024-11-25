@@ -2,14 +2,15 @@ header
   h1.logo UpRoar
     i(class='fa fa-handshake-o')
   ul.nav
-    li.nav-link 
-      a(href='/') Dashboard
-    li.nav-link 
-      a(href='/edit') Add
-    li.nav-link
-      if __authenticated 
-        a(href='/auth/logout') Log out
-      if !__authenticated
-        a(href='/auth/sign-up') Sign Up
+    if __authenticated 
+      li.nav-link 
+        a(href='/') Dashboard
+      li.nav-link 
+        a(href='/edit') Add
+      li.nav-link
+        a(href='/auth/logout') Logout
+    if !__authenticated
+      li.nav-link
+        a(href='/auth/sign-up') Sign Up/Login
   div.burger 
     i(class='fa fa-bars')
