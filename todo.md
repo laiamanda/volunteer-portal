@@ -20,8 +20,6 @@
     * To new users
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
-  * If failed to login, display error message on the page
-  * If failed to sign-up, display error on the page
   * Secure Cookies Bug
 * Create a web-scrapper that scrapes for all non-profit organization and store it into the database
 * Create a change-log page
