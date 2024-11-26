@@ -8,3 +8,9 @@
 #error-banner {
   background-color: #F80312;
 }
+
+.banner {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin: 1.5% 3%;
+}
