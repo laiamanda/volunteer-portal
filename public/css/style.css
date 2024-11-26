@@ -69,6 +69,11 @@ header {
   flex-wrap: wrap;
 }
 
+/* FONT AWESOME */
+.fa.fa-handshake-o {
+  transform: rotate(-25deg);
+}
+
 /* Responsive Layout */
 @media screen and (max-width: 678px) {
   .burger {
