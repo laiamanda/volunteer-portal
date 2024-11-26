@@ -153,8 +153,6 @@ app.use(logout);
 /*=== USER ROUTES === */
 app.use(dashboard);
 app.use(edit);
-// // User Route
-// app.use(user);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {
