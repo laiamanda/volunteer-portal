@@ -27,21 +27,10 @@
   background-color: #F86F03;
 }
 
-.btn-auth {
+.btn.btn-auth {
   border: 1px solid #000;
-  background-color: #525FE1;
-  border-radius: 7px;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
   margin: 0% 3%;
   text-align: center;
-  text-decoration: none;
   padding: 1.50px 20px;
   width: 100px;
-}
-
-.btn-auth:hover {
-  filter: brightness(1.1);
-  transition: all 0.25s;
 }
