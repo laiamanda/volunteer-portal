@@ -22,10 +22,10 @@ html(lang='en')
     include /global/header
     .container.center
       .banner
-        h2 Welcome back: #{__user.username}
+        h2 Welcome: #{__user.username}
       .banner
         h2.center Add Volunteer Hours
-        a.btn(href='/edit') Add Hours
+        a.btn.btn-orange(href='/edit') Add Hours
       +dataTable(columns, data, {
         id: 'dashboard-table',
         class: [],
