@@ -33,3 +33,22 @@ table.table-style-default th, table.table-style-default td {
   padding: 5px;
   white-space: none;
 }
+
+/*  DATATABLES */
+.dt-buttons {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.dt-search {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.dt-length {
+  text-align: right
+}
+
+.dt-info {
+  text-align: right
+}

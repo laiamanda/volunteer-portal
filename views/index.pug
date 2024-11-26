@@ -14,6 +14,7 @@ html(lang='en')
     include /global/head.pug
     include /global/datatables.pug
     include /util/tables.pug
+    link(rel='stylesheet' type='text/css' href='/css/dashboard.css')
     script(type='text/javascript').
       const columns = !{interpolate(columns)};
     script(src='/js/util/datatables.js' type='text/javascript')
