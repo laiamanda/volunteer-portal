@@ -8,14 +8,16 @@
 ## To Do Tasks:
 * Global Styling
   * Add drop-shadow for buttons
+  * Handle used link style - auth page
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
 * Edit Page
   * Add a drop-down menu for organization
   * Style form to match better to Figma design
+  * Add more details and store the information
 * Dashboard
-  * Style the DataTable - Looking funky right now
+  * Style datatables more
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case
   * Secure Cookies Bug
