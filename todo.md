@@ -5,10 +5,19 @@
 * Create a sign-in page where user can create an account ✔️
 * Create a login page where user can login into the website ✔️
 
+## Extra Goals:
+* Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option
+* Create a change-log page
+* Create a error handling system that emails the software developer for issues
+* Create a home-page
+* Create a password validator
+* Create a function that detects if the username is already taken
+* Add Google Auth
+* During default sign-up, add verification to confirm the email
+
 ## To Do Tasks:
 * Global Styling
   * Add drop-shadow for buttons
-  * Handle used link style - auth page
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
@@ -19,8 +28,13 @@
 * Dashboard
   * Style datatables more
 * Auth
-  * Make users have their password to include symbol, number, letter, upper and lower case
+  * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
+  * In Sign up- ask for user's email, first name, lastname
   * Secure Cookies Bug
+* HomePage
+  * Design a homepage using Figma
+  * Add a link to Homepage
+  * Create a homepage
 * Create a web-scrapper that scrapes for all non-profit organization and store it into the database
 * Create a change-log page
 * Get npm start to work

@@ -27,6 +27,14 @@
   background-color: #F86F03;
 }
 
+.btn.btn-blue {
+  background-color: #038CF8;
+}
+
+.btn.btn-light-orange {
+  background-color: #FFA41B;
+}
+
 .btn.btn-auth {
   border: 1px solid #000;
   margin: 0% 3%;
