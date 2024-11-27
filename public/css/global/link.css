@@ -1,0 +1,14 @@
+.link {
+  color: #0a0a0a;
+  font-size: 14px; 
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #038CF8;
+}
+
+.link.error {
+  color: #F80312;
+  text-decoration: underline;
+}
