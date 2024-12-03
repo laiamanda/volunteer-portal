@@ -17,7 +17,6 @@
 
 ## To Do Tasks:
 * Global Styling
-  * Add drop-shadow for buttons
 * Database
   * Update user scheme
     * Store createddate, firstname, lastname, email
