@@ -8,5 +8,5 @@ export const landingPage = Router();
  * @param res the response sent back to the client
  */
 landingPage.get('/', async(req, res) => {
-    res.send('This is the landing page');
+    res.render('index');
 });

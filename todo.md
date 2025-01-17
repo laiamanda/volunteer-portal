@@ -31,9 +31,9 @@
   * In Sign up- ask for user's email
   * Secure Cookies Bug
 * HomePage
-  * Add a link to Homepage
-  * Create a homepage
+  * Add CSS to HomePage
 * Profile Page
+  * Add to Navbar
   * Load User's Details
   * Able to change password
   * Upload User's Image
