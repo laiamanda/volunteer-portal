@@ -28,12 +28,14 @@
   * Style datatables more
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
-  * In Sign up- ask for user's email, first name, lastname
+  * In Sign up- ask for user's email
   * Secure Cookies Bug
 * HomePage
   * Add a link to Homepage
   * Create a homepage
 * Profile Page
+  * Create route
+  * Create a page
   * Able to change password
   * Upload User's Image
   * Allow user to add first name and last name

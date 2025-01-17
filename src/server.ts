@@ -17,7 +17,7 @@ import { signUp } from './routes/auth/sign-up';
 import { login } from './routes/auth/login';
 import { logout } from './routes/auth/logout';
 import { edit } from './routes/edit';
-// import { user } from './routes/user'; 
+import { profile } from './routes/user';
  
 const app = express();
 
@@ -153,6 +153,8 @@ app.use(logout);
 /*=== USER ROUTES === */
 app.use(dashboard);
 app.use(edit);
+
+app.use(profile);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {
