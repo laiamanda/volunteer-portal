@@ -34,8 +34,7 @@
   * Add a link to Homepage
   * Create a homepage
 * Profile Page
-  * Create route
-  * Create a page
+  * Load User's Details
   * Able to change password
   * Upload User's Image
   * Allow user to add first name and last name
