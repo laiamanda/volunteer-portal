@@ -30,7 +30,7 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
         if (error) {
           return error;
         }
-        console.log('Hashed: ' + hash);
+        // console.log('Hashed: ' + hash);
   
         const entry = await db.query(`
           INSERT INTO "accounts"."users" (

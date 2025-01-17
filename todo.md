@@ -31,9 +31,12 @@
   * In Sign up- ask for user's email, first name, lastname
   * Secure Cookies Bug
 * HomePage
-  * Design a homepage using Figma
   * Add a link to Homepage
   * Create a homepage
+* Profile Page
+  * Able to change password
+  * Upload User's Image
+  * Allow user to add first name and last name
 * Create a web-scrapper that scrapes for all non-profit organization and store it into the database
 * Create a change-log page
 * Get npm start to work
