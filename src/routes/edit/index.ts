@@ -10,7 +10,7 @@ export const edit = express.Router();
  * @param res the response sent back to the client
  */
 edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
-  res.render('edit');
+  res.render('user/edit');
 });
 
 /**
@@ -40,5 +40,5 @@ edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
     ]
   );
 
-  return res.redirect('/');
+  return res.redirect('/user/dashboard');
 });

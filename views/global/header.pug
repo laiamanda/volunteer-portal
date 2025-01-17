@@ -1,10 +1,11 @@
 header
-  h1.logo UpRoar
-    i(class='fa fa-handshake-o')
+  a(href="/")
+    h1.logo UpRoar
+      i(class='fa fa-handshake-o')
   ul.nav
     if __authenticated 
       li.nav-link 
-        a(href='/') Dashboard
+        a(href='/user/dashboard') Dashboard
       li.nav-link
         a.btn.btn-auth(href='/auth/logout') Logout
     if !__authenticated
