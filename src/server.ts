@@ -12,12 +12,13 @@ import store from 'connect-pg-simple';
 import db from './util/database';
 
 /* =============  IMPORT ROUTES ============= */
-import { dashboard } from './routes/dashboard';
+import { landingPage } from './routes';
+import { dashboard } from './routes/user/dashboard';
 import { signUp } from './routes/auth/sign-up';
 import { login } from './routes/auth/login';
 import { logout } from './routes/auth/logout';
 import { edit } from './routes/edit';
-import { profile } from './routes/user';
+import { profile } from './routes/user/index';
  
 const app = express();
 
@@ -146,6 +147,7 @@ app.use((req, res, next) => {
 });
 
 /* ============== ROUTES ============== */
+app.use(landingPage);
 /* === AUTH ====*/
 app.use(signUp);
 app.use(login);
@@ -153,7 +155,6 @@ app.use(logout);
 /*=== USER ROUTES === */
 app.use(dashboard);
 app.use(edit);
-
 app.use(profile);
 
 // This route will handle all requests that are not handle by others
