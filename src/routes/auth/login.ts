@@ -18,6 +18,6 @@ login.get('/auth/login', (req: Request, res: Response) => {
  * @param res the response sent back to the client
  */
 login.post('/auth/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/auth/login/?error=error'
+  successRedirect: '/user/dashboard',
+  failureRedirect: '/auth/login/?error=error' // 
 }));
