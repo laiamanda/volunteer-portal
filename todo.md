@@ -31,7 +31,6 @@
 * HomePage
   * Add CSS to HomePage
 * Profile Page
-  * Add to Navbar
   * Load User's Details
   * Able to change password
   * Upload User's Image

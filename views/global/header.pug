@@ -6,6 +6,10 @@ header
     if __authenticated 
       li.nav-link 
         a(href='/user/dashboard') Dashboard
+      li.nav-link 
+        a(href='/user/profile') Profile
+      li.nav-link 
+        a(href='#') Change-Log
       li.nav-link
         a.btn.btn-auth(href='/auth/logout') Logout
     if !__authenticated

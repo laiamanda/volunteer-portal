@@ -8,4 +8,34 @@ html(lang='en')
   body
     include /global/header
     .container.center
-        h2 User Profile
+      h2 User Profile
+      .flex-row
+        form(method='#')
+          table.table-layout-form.table-style-default
+            tr
+              td
+                label User Name
+              td
+                input(type='text' disabled)
+            tr
+              td
+                label First Name  
+              td
+                input(type='text')
+            tr
+              td
+                label Last Name 
+              td
+                input(type='text')
+            tr
+              td
+                label Email
+              td
+                input(type='text')
+            tr
+              td
+                label Birthday
+              td
+                input(type='date')
+          
+          button.btn.btn-orange(type='submit') Update
