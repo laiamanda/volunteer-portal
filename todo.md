@@ -17,9 +17,6 @@
 
 ## To Do Tasks:
 * Global Styling
-* Database
-  * Update user scheme
-    * Store createddate, firstname, lastname, email
 * Edit Page
   * Add a drop-down menu for organization
   * Style form to match better to Figma design
@@ -28,6 +25,7 @@
   * Style datatables more
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
+  * Confirm Password Entry
   * In Sign up- ask for user's email
   * Secure Cookies Bug
 * HomePage

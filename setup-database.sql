@@ -14,7 +14,13 @@ CREATE SCHEMA IF NOT EXISTS "accounts";
 CREATE TABLE IF NOT EXISTS "accounts"."users" (
   "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   "username" TEXT NOT NULL,
-  "password" TEXT NOT NULL
+  "password" TEXT NOT NULL,
+  "first_name" VARCHAR(255),
+  "last_name" VARCHAR(255),
+  "email" TEXT,
+  "created_at" TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  "birthday" DATE,
+  "location" TEXT;
 );
 
 CREATE SCHEMA IF NOT EXISTS "volunteer_entries";
