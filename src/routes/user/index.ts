@@ -10,11 +10,20 @@ export const profile = Router();
  * @param res the response sent back to the client
  */
 profile.get('/user/profile', auth.loggedIn, async (req, res) => {
+    // To Do: Use the User Id
     const user = (
       await db.query(
         `
-          SELECT * FROM "accounts"."users"
-        `)
-    );
-    res.render('user/profile');
+          SELECT * 
+          FROM "accounts"."users"
+          WHERE "id" = $1
+        `,[
+          1,
+        ]
+      )
+    ).rows[0];
+
+    res.render('user/profile', {
+      user: user,
+    });
 });

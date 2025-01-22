@@ -16,7 +16,6 @@
 * During default sign-up, add verification to confirm the email
 
 ## To Do Tasks:
-* Global Styling
 * Edit Page
   * Add a drop-down menu for organization
   * Style form to match better to Figma design
@@ -28,10 +27,10 @@
   * Confirm Password Entry
   * In Sign up- ask for user's email
   * Secure Cookies Bug
+  * Add Session to store user id
 * HomePage
   * Add CSS to HomePage
 * Profile Page
-  * Load User's Details
   * Able to change password
   * Upload User's Image
   * Allow user to add first name and last name
