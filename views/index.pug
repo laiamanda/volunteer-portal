@@ -6,4 +6,11 @@ html(lang='en')
   body
     include /global/header
     .container.center
-      h1 Welcome to UpRoar
+      .banner
+        h1 Welcome to UpRoar
+        p The Simplest Volunteer Dashboard to track your hours
+        if !__authenticated
+          a.btn.btn-blue(href="/auth/login") Login
+          a.btn.btn-light-orange(href="/auth/sign-up") Sign Up
+        if __authenticated
+          a.btn(href="/") View Your Dashboard
