@@ -20,16 +20,12 @@
   * Add a drop-down menu for organization
   * Style form to match better to Figma design
   * Add more details and store the information
-* Dashboard
-  * Style datatables more
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
   * Confirm Password Entry
   * In Sign up- ask for user's email
   * Secure Cookies Bug
   * Add Session to store user id
-* HomePage
-  * Add CSS to HomePage
 * Profile Page
   * Able to change password
   * Upload User's Image
