@@ -1,8 +1,10 @@
 -
   __status.errorText = {
     error: 'There’s seems to be an issue. Please try again.' + 
-            'If the problem persist, reach out to the team and we will be happy to assist you.'
-  }[__status.error];
+            'If the problem persist, reach out to the team and we will be happy to assist you.',
+    password_match: 'Your password does not match. Please try again',
+  }[__status.error]
+
 
 doctype html
 html(lang='en')
@@ -31,5 +33,10 @@ html(lang='en')
                 label(for='password') Password
               td
                 input(id='password' name='password' type='password'  required)
+            tr
+              td
+                label(for='confirm_ password') Confirm Password
+              td
+                input(id='confirm_password' name='confirm_password' type='password'  required)
           button.btn.btn-green(type='submit') Sign Up
       a.link(href='/auth/login') Already have an account? Login
