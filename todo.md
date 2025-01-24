@@ -22,8 +22,6 @@
   * Add more details and store the information
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
-  * Confirm Password Entry
-  * In Sign up- ask for user's email
   * Secure Cookies Bug
   * Add Session to store user id
 * Profile Page
