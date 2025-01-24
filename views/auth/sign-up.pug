@@ -20,11 +20,16 @@ html(lang='en')
               td
                 label(for='username') Username
               td
-                input(type='text' name='username' required)
+                input(id='username' name='username' type='text' required)
+            tr
+              td
+                label(for='email') Email
+              td
+                input(id='email' name='email' type='email' required)
             tr
               td
                 label(for='password') Password
               td
-                input(type='password' name='password' required)
+                input(id='password' name='password' type='password'  required)
           button.btn.btn-green(type='submit') Sign Up
       a.link(href='/auth/login') Already have an account? Login

@@ -35,11 +35,13 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
         const entry = await db.query(`
           INSERT INTO "accounts"."users" (
             "username",
-            "password"
-          ) VALUES ($1, $2)
+            "password",
+            "email"
+          ) VALUES ($1, $2, $3)
           `, [
             req.body.username,
-            hash
+            hash,
+            req.body.email,
           ]);
       });
     });
