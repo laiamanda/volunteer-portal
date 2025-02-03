@@ -9,3 +9,11 @@
 .right {
   text-align: right;
 }
+
+.no-style {
+  text-decoration: none;
+}
+
+.white {
+  color: white;
+}

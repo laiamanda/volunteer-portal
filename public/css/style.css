@@ -32,6 +32,7 @@ header {
 
 .nav li {
   list-style-type: none;
+  padding-left: 7px;
 }
 
 .nav-link a {

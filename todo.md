@@ -7,7 +7,7 @@
 
 ## Extra Goals:
 * Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option
-* Create a change-log page
+* Create a change-log page ✔️
 * Create a error handling system that emails the software developer for issues
 * Create a home-page ✔️
 * Create a password validator
@@ -29,5 +29,4 @@
   * Upload User's Image
   * Allow user to add first name and last name
 * Create a web-scrapper that scrapes for all non-profit organization and store it into the database
-* Create a change-log page
 * Get npm start to work
