@@ -13,6 +13,7 @@ import db from './util/database';
 
 /* =============  IMPORT ROUTES ============= */
 import { landingPage } from './routes';
+import { versionLog } from './routes/version-log';
 import { dashboard } from './routes/user/dashboard';
 import { signUp } from './routes/auth/sign-up';
 import { login } from './routes/auth/login';
@@ -148,6 +149,7 @@ app.use((req, res, next) => {
 
 /* ============== ROUTES ============== */
 app.use(landingPage);
+app.use(versionLog);
 /* === AUTH ====*/
 app.use(signUp);
 app.use(login);

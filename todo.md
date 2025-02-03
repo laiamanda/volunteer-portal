@@ -9,7 +9,7 @@
 * Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option
 * Create a change-log page
 * Create a error handling system that emails the software developer for issues
-* Create a home-page
+* Create a home-page ✔️
 * Create a password validator
 * Create a function that detects if the username is already taken
 * Add Google Auth
