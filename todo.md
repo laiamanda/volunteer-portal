@@ -11,8 +11,7 @@
 * Create a error handling system that emails the software developer for issues
 * Create a home-page ✔️
 * Create a password validator
-* Create a function that detects if the username is already taken
-* Add Google Auth
+* Create a function that detects if the username is already taken ✔️
 * During default sign-up, add verification to confirm the email
 
 ## To Do Tasks:
