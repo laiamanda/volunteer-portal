@@ -20,8 +20,31 @@ signUp.get('/auth/sign-up', (req: Request, res: Response) => {
  */
 signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
   const saltRounds = 10;
+  let isValidUsername = false;
 
-  if(req.body.password === req.body.confirm_password) {
+  // Query the database to see if the username already exists
+  let existUsername = (await db.query(`
+    SELECT "username"
+    FROM "accounts"."users"
+    WHERE "username" = $1
+  `, [
+    req.body.username
+  ])).rows;
+
+  console.log(existUsername);
+
+  // If existUsername returns no results
+  if(existUsername.length == 0) {
+    isValidUsername = true; // The username is valid
+  } else {
+    isValidUsername = false;
+    console.log('The username already exist');
+    return res.redirect('/auth/sign-up/?error=username_error');
+  }
+
+  console.log(isValidUsername);
+
+  if((req.body.password === req.body.confirm_password) && (isValidUsername == true)) {
     try {
       bcrypt.genSalt(saltRounds, (error, salt) => {
         if (error) {
