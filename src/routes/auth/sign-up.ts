@@ -31,19 +31,15 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
     req.body.username
   ])).rows;
 
-  console.log(existUsername);
-
   // If existUsername returns no results
   if(existUsername.length == 0) {
     isValidUsername = true; // The username is valid
   } else {
-    isValidUsername = false;
-    console.log('The username already exist');
+    isValidUsername = false; // The user name is not valid
     return res.redirect('/auth/sign-up/?error=username_error');
   }
 
-  console.log(isValidUsername);
-
+  // Checks if the password and confirm password matches and if the isValidUsername is valid
   if((req.body.password === req.body.confirm_password) && (isValidUsername == true)) {
     try {
       bcrypt.genSalt(saltRounds, (error, salt) => {
@@ -56,6 +52,7 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
           }
           // console.log('Hashed: ' + hash);
     
+          // Insert the user into the database
           const entry = await db.query(`
             INSERT INTO "accounts"."users" (
               "username",
