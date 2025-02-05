@@ -22,7 +22,6 @@
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
   * Secure Cookies Bug
-  * Add Session to store user id
 * Profile Page
   * Able to change password
   * Upload User's Image
