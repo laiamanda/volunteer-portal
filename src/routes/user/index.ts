@@ -30,9 +30,17 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
   if(user === undefined) {
     // Return a 404 error
     return res.render('./error', {error: res.status(404)});
-  } else {
-    return res.render('user/profile', {
-      user: user,
-    });
+  } 
+
+  if(req.user){
+    // If the user id does not match with the user param id
+    if(userId !== req.user.id) {
+      // Return a 404 error
+      return res.render('./error', {error: res.status(404)});
+    } else {
+      return res.render('user/profile', {
+        user: user,
+      }); 
+    }
   }
 });
