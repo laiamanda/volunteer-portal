@@ -9,8 +9,12 @@ export const profile = Router();
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
-profile.get('/user/profile', auth.loggedIn, async (req, res) => {
-    // To Do: Use the User Id
+profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
+
+  const userId = parseInt(req.params.userId);
+
+  if(req.user) {
+    // Checks if user exists
     const user = (
       await db.query(
         `
@@ -18,12 +22,20 @@ profile.get('/user/profile', auth.loggedIn, async (req, res) => {
           FROM "accounts"."users"
           WHERE "id" = $1
         `,[
-          1,
+          userId,
         ]
       )
     ).rows[0];
 
-    res.render('user/profile', {
-      user: user,
-    });
+    console.log(req.user.id);
+    console.log(userId);
+
+    if(user === undefined) {
+      return res.redirect('/auth/login');
+    } else {
+      return res.render('user/profile', {
+        user: user,
+      });
+    }
+  }
 });
