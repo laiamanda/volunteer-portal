@@ -25,6 +25,5 @@
 * Profile Page
   * Able to change password
   * Upload User's Image
-  * Allow user to add first name and last name
 * Create a web-scrapper that scrapes for all non-profit organization and store it into the database
 * Get npm start to work

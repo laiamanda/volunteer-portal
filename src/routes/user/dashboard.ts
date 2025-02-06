@@ -11,7 +11,10 @@ export const dashboard = Router();
  */
 dashboard.get('/user/dashboard', auth.loggedIn, async (req, res) => {
   const data = (
-    await db.query('SELECT * FROM "volunteer_entries"."entries"')
+    await db.query(`
+      SELECT * 
+      FROM "volunteer_entries"."entries"
+      `)
   ).rows;
 
   res.render('user/dashboard', {
