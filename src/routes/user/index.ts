@@ -25,7 +25,6 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
       ]
     )
   ).rows[0];
-
   // If the user is undefined
   if(user === undefined) {
     // Return a 404 error
@@ -43,4 +42,8 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
       }); 
     }
   }
+});
+
+profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
+  console.log('You hit post');
 });
