@@ -44,6 +44,11 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
   }
 });
 
+/**
+ * POST /user/:userId/profile
+ * @param req the request sent from the client
+ * @param res the response sent back to the client
+ */
 profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
   // Update the user's information
   await db.query(`
@@ -63,5 +68,7 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
       req.body.location,
       req.params.userId,
     ]);
+
+  //Redirect the user back to their profile page
   res.redirect(`/user/${req.params.userId}/profile`);
 });
