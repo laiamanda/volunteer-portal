@@ -45,5 +45,23 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
 });
 
 profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
-  console.log('You hit post');
+  // Update the user's information
+  await db.query(`
+    UPDATE "accounts"."users"
+    SET 
+      "first_name" = $1,
+      "last_name" = $2,
+      "email" = $3,
+      "birthday" = $4,
+      "location" = $5
+    WHERE "id" = $6
+    `, [
+      req.body.first_name,
+      req.body.last_name,
+      req.body.email,
+      req.body.birthday,
+      req.body.location,
+      req.params.userId,
+    ]);
+  res.redirect(`/user/${req.params.userId}/profile`);
 });
