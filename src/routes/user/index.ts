@@ -61,11 +61,11 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
       "location" = $5
     WHERE "id" = $6
     `, [
-      req.body.first_name,
-      req.body.last_name,
-      req.body.email,
-      req.body.birthday,
-      req.body.location,
+      req.body.first_name || null,
+      req.body.last_name || null ,
+      req.body.email || null,
+      req.body.birthday || null ,
+      req.body.location || null ,
       req.params.userId,
     ]);
 
