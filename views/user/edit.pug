@@ -6,7 +6,7 @@ html(lang='en')
   body
     include /global/header
     .container.center
-      h2 Add Hours
+      h2 Add Volunteer Hours
       .flex-row
         form(method='post')
           table.table-layout-form.table-style-default
@@ -29,10 +29,19 @@ html(lang='en')
                 input(type='text' name='role')
             tr
               td
-                label Hours
+                label Date of Volunteer
+              td
+                input(type='date' name='date')
+            tr
+              td
+                label Amount of Hours
               td
                 input(type='number' name='hours')
-
+            tr
+              td
+                label Description
+              td
+                textarea(name="description") 
           .flex-row
             a.btn.btn-cancel(href='/') Back
             button.btn(type='submit') Submit
