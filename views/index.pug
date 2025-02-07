@@ -8,9 +8,15 @@ html(lang='en')
     .container.center
       .banner
         h1 Welcome to UpRoar
-        p The Simplest Volunteer Dashboard to track your hours
+        p The Most Simplest Volunteer Portal to track your hours easier
         if !__authenticated
           a.btn.btn-blue(href="/auth/login") Login
           a.btn.btn-light-orange(href="/auth/sign-up") Sign Up
         if __authenticated
-          a.btn(href="/user/dashboard") View Your Dashboard
+          a.btn.btn-light-orange(href="/user/dashboard") View Your Dashboard
+    .container.center
+      h2 About Our Team
+      p Bacon ipsum dolor amet burgdoggen ribeye pork loin turducken. Jerky meatball corned beef biltong capicola short loin ribeye landjaeger prosciutto meatloaf.
+      p Ball tip shankle beef ribs turducken venison pork capicola bresaola shoulder short ribs meatball beef kielbasa corned beef ribeye.
+    .container.center
+      h2 Our Mission Statements
