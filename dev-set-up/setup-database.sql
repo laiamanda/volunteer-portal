@@ -23,6 +23,13 @@ CREATE TABLE IF NOT EXISTS "accounts"."users" (
   "location" TEXT;
 );
 
+CREATE SCHEMA IF NOT EXISTS "organizations";
+
+CREATE TABLE IF NOT EXISTS "organizations"."entries" (
+  "id" INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  "name" TEXT NOT NULL
+ );
+
 CREATE SCHEMA IF NOT EXISTS "volunteer_entries";
 
 CREATE TABLE IF NOT EXISTS "volunteer_entries"."entries" (
