@@ -6,7 +6,7 @@
 * Create a login page where user can login into the website ✔️
 
 ## Extra Goals:
-* Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option
+* Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option✔️
 * Create a change-log page ✔️
 * Create a error handling system that emails the software developer for issues
 * Create a home-page ✔️
@@ -16,7 +16,6 @@
 
 ## To Do Tasks:
 * Edit Page
-  * Add a drop-down menu for organization
   * Style form to match better to Figma design
   * Add more details and store the information
 * Auth
