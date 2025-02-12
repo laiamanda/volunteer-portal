@@ -8,20 +8,22 @@ html(lang='en')
     .container.center
       h2 Add Volunteer Hours
       .flex-row
-        form(method='post')
+        form(method='post' autocomplete='off')
           table.table-layout-form.table-style-default
             tr
               td
                 label Name
               td
                 //- TO DO: Change value to be pulled from the backend to avoid the __
-                input(type='text' name='name' value=__user.username disabled)
-            //- TO DO: Create a drop-down option to find organization
+                input(type='text' name='name' value=__user.username disabled) 
             tr
               td
                 label Organization
               td
-                input(type='text' name='organization')
+                input(list="organizations" name="organization")
+                datalist(id="organizations")
+                  for organization of organizations
+                    option(value=organization.name)
             tr
               td
                 label Position/Role

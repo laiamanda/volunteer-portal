@@ -10,7 +10,17 @@ export const edit = express.Router();
  * @param res the response sent back to the client
  */
 edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
-  res.render('user/edit');
+  // Retrieve all entries from organizations
+  const organizations = (
+    await db.query(`
+      SELECT "name"
+      FROM "organizations"."entries"
+      ORDER BY "name"
+    `)).rows;
+
+  res.render('user/edit', {
+    organizations: organizations,
+  });
 });
 
 /**
