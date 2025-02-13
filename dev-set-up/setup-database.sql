@@ -38,4 +38,6 @@ CREATE TABLE IF NOT EXISTS "volunteer_entries"."entries" (
   "organization" TEXT NOT NULL,
   "role" TEXT,
   "number_of_hours" INTEGER NOT NULL,
+  "date" DATE,
+  "description" TEXT,
 );

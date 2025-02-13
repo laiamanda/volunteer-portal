@@ -39,14 +39,18 @@ edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
         "user",
         "number_of_hours",
         "organization",
-        "role"
+        "role",
+        "date",
+        "description
       )
-      VALUES($1, $2, $3, $4) 
+      VALUES($1, $2, $3, $4, $5, $6) 
       `, [
         req?.user.username,
         req.body.hours || null ,
         req.body.organization || null,
         req.body.role || null,
+        req.body.date || null,
+        req.body.description || null,
       ]
     );
   }
