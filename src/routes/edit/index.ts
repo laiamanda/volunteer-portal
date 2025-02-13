@@ -10,17 +10,23 @@ export const edit = express.Router();
  * @param res the response sent back to the client
  */
 edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
-  // Retrieve all entries from organizations
-  const organizations = (
-    await db.query(`
-      SELECT "name"
-      FROM "organizations"."entries"
-      ORDER BY "name"
-    `)).rows;
+  if(req.user) {
+    const username = req.user.username;
+     // Retrieve all entries from organizations
+    const organizations = (
+      await db.query(`
+        SELECT "name"
+        FROM "organizations"."entries"
+        ORDER BY "name"
+      `)).rows;
 
-  res.render('user/edit', {
-    organizations: organizations,
-  });
+    res.render('user/edit', {
+      organizations: organizations,
+      username: username,
+    });
+  } else {
+    return res.render('./error', {error: res.status(404)});
+  }
 });
 
 /**
@@ -29,11 +35,9 @@ edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
  * @param res the response sent back to the client
  */
 edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => { 
-  // TO DO: Retrieve logged-in user information and automatically insert into the database
-  // Insert into the database
-
   if(req.user) {
     // TO DO: Drop the table in the db and reorganize columns
+    // Insert into the database
     const row = await db.query(`
       INSERT INTO "volunteer_entries"."entries" (
         "user",
@@ -41,7 +45,7 @@ edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
         "organization",
         "role",
         "date",
-        "description
+        "description"
       )
       VALUES($1, $2, $3, $4, $5, $6) 
       `, [
@@ -55,6 +59,6 @@ edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
     );
   }
   
-
+  // Redirect user back to dashboard
   return res.redirect('/user/dashboard');
 });

@@ -17,7 +17,6 @@
 ## To Do Tasks:
 * Edit Page
   * Style form to match better to Figma design
-  * Add more details and store the information
 * Update Volunteer Entry Page
 * Delete Volunteer Entry Page
 * Auth
