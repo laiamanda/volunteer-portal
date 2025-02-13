@@ -18,9 +18,18 @@
 * Edit Page
   * Style form to match better to Figma design
   * Add more details and store the information
+* Update Volunteer Entry Page
+* Delete Volunteer Entry Page
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
   * Secure Cookies Bug
+  * Add a remember me function when login
+  * Add an organization login part
 * Profile Page
   * Able to change password
+  * Able to insert a profile picture
+  * Delete Account
+* Create a newsletter email
 * Get npm start to work
+* Create an organization web page
+* Create an organization admin page
