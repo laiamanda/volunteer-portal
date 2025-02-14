@@ -71,6 +71,20 @@ header {
   flex-wrap: wrap;
 }
 
+.card-list {
+  width: 100%;
+}
+.card {
+  background-color: #525FE1;
+  color: #fff;
+  width: 30%;
+  height: 30%;
+  justify-content: center;
+  float: left;
+  margin: 3px 5px;
+  padding: 1.5% 1%;
+}
+
 /* FONT AWESOME */
 .fa.fa-handshake-o {
   transform: rotate(-25deg);
