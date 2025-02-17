@@ -17,7 +17,6 @@
 ## To Do Tasks:
 * Edit Page
   * Style form to match better to Figma design
-* Update Volunteer Entry Page
 * Delete Volunteer Entry Page
 * Auth
   * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
