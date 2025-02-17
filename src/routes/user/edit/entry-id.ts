@@ -39,3 +39,34 @@ editEntry.get('/user/:userId/edit/:entryId', auth.loggedIn, async(req, res)=> {
       });
     }
 });
+
+/**
+ * POST /user/:userId/edit/:entryId
+ */
+editEntry.post('/user/:userId/edit/:entryId', auth.loggedIn, async (req, res) => {
+    const userId = parseInt(req.params.userId);
+
+    if(req.user && (userId == req.user.id)) {
+      const row = await db.query(`
+          UPDATE "volunteer_entries"."entries"
+          SET 
+            "number_of_hours" = $1,
+            "organization" = $2,
+            "role" = $3,
+            "date" = $4,
+            "description" = $5
+          WHERE "id" = $6
+        `, [
+          req.body.hours || '',
+          req.body.organization || '',
+          req.body.role || '',
+          req.body.date || null,
+          req.body.description || '',
+          req.params.entryId,
+        ]);
+
+        return res.redirect(`/user/${userId}/edit/${req.params.entryId}`);
+    }
+
+    return res.render('./error', {error: res.status(404)});
+});

@@ -11,7 +11,7 @@ html(lang='en')
     include /global/header
     .container.center
       if entry.id
-        h2 Update #{entry.id} Volunteer Entry
+        h2 Update Volunteer Entry Id: #{entry.id}
       else
         h2 Add Volunteer Hours
       .flex-row
@@ -21,7 +21,6 @@ html(lang='en')
               td
                 label Name
               td
-                //- TO DO: Change value to be pulled from the backend to avoid the __
                 input(type='text' name='name' value=username disabled) 
             tr
               td
@@ -52,6 +51,6 @@ html(lang='en')
               td
                 textarea(name="description")= entry.description 
           .flex-row
-            a.btn.btn-cancel(href='/') Back
+            a.btn.btn-cancel(href='/user/dashboard') Back
             button.btn(type='submit') Submit
           
