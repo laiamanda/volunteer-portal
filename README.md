@@ -7,8 +7,15 @@ This is a simple web application that allows users to track their volunteer hour
 
 Set up: npm install
 
+In Express > index.d.ts, Change interface User {} to
+
+interface User {
+    id: Number,
+    username: String,
+}
+
 Set up Database: 
- * Have PostgresSQL installed and run dev-set-up/setup-database.sql 
+ * Have PostgresSQL installed and run setup-database.sql into the SQL Query 
 
 Compile Code: npx tsc
 
