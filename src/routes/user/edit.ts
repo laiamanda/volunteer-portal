@@ -9,8 +9,9 @@ export const edit = express.Router();
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
-edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
-  if(req.user) {
+edit.get('/user/:userId/edit', auth.loggedIn ,async (req: Request, res: Response) => {
+  const userId = parseInt(req.params.userId);
+  if(req.user && (userId == req.user.id)) {
     const username = req.user.username;
      // Retrieve all entries from organizations
     const organizations = (
@@ -34,8 +35,10 @@ edit.get('/edit', auth.loggedIn ,async (req: Request, res: Response) => {
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
-edit.post('/edit', auth.loggedIn ,async (req: Request, res: Response) => { 
-  if(req.user) {
+edit.post('/user/:userId/edit', auth.loggedIn ,async (req: Request, res: Response) => { 
+  const userId = parseInt(req.params.userId);
+
+  if(req.user && (userId == req.user.id)) {
     // TO DO: Drop the table in the db and reorganize columns
     // Insert into the database
     const row = await db.query(`

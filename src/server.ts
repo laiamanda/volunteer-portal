@@ -19,7 +19,7 @@ import { dashboard } from './routes/user/dashboard';
 import { signUp } from './routes/auth/sign-up';
 import { login } from './routes/auth/login';
 import { logout } from './routes/auth/logout';
-import { edit } from './routes/edit';
+import { edit } from './routes/user/edit';
 import { profile } from './routes/user/index';
  
 const app = express();

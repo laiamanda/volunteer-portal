@@ -26,7 +26,7 @@ html(lang='en')
         h2 Welcome: #{__user.username}
       .banner
         h2.center Add Volunteer Hours
-        a.btn.btn-orange(href='/edit') Add Hours
+        a.btn.btn-orange(href=`/user/${__user.id}/edit`) Add Hours
       +dataTable(columns, data, {
         id: 'dashboard-table',
         class: [],
