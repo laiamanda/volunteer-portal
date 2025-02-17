@@ -1,14 +1,21 @@
+- entry = entry || {}
+
 doctype html
 html(lang='en')
   head
     title Edit | UpRoar
     include /global/head.pug
+    script(type='text/javascript').
+      const entry = !{interpolate(entry)};
   body
     include /global/header
     .container.center
-      h2 Add Volunteer Hours
+      if entry.id
+        h2 Update #{entry.id} Volunteer Entry
+      else
+        h2 Add Volunteer Hours
       .flex-row
-        form(method='post' autocomplete='off')
+        form(method='post')
           table.table-layout-form.table-style-default
             tr
               td
@@ -20,7 +27,7 @@ html(lang='en')
               td
                 label Organization
               td
-                input(list="organizations" name="organization")
+                input(list="organizations" name="organization" value=entry.organization)
                 datalist(id="organizations")
                   for organization of organizations
                     option(value=organization.name)
@@ -28,17 +35,17 @@ html(lang='en')
               td
                 label Position/Role
               td
-                input(type='text' name='role')
+                input(type='text' name='role' value=entry.role)
             tr
               td
                 label Date of Volunteer
               td
-                input(type='date' name='date')
+                input(type='date' name='date' value=entry.date)
             tr
               td
                 label Amount of Hours
               td
-                input(type='number' name='hours')
+                input(type='number' name='hours' value=entry.number_of_hours)
             tr
               td
                 label Description

@@ -5,7 +5,7 @@ import * as auth from '../../util/auth';
 export const edit = express.Router();
 
 /**
- * GET /edit
+ * GET /user/:userId/edit
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
@@ -13,7 +13,7 @@ edit.get('/user/:userId/edit', auth.loggedIn ,async (req: Request, res: Response
   const userId = parseInt(req.params.userId);
   if(req.user && (userId == req.user.id)) {
     const username = req.user.username;
-     // Retrieve all entries from organizations
+    // Retrieve all entries from organizations
     const organizations = (
       await db.query(`
         SELECT "name"
@@ -31,7 +31,7 @@ edit.get('/user/:userId/edit', auth.loggedIn ,async (req: Request, res: Response
 });
 
 /**
- * POST /edit
+ * POST /user/:userId/edit
  * @param req the request sent from the client
  * @param res the response sent back to the client
  */
