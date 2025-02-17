@@ -10,4 +10,7 @@ mixin dataTable(columns, rows, options={})
       for row in rows
         tr
           for column in columns
-            td= toHumanString(row[column.key], column.type)
+            if column.formatter
+              +#{column.formatter}(row[column.key], row)
+            else
+              td= toHumanString(row[column.key], column.type)

@@ -1,3 +1,8 @@
+mixin formatDashboardActions(id)
+  td.col-actions
+    a(href=`/user/${__user.id}/edit/${id}`) #[i.fa.fa-edit]
+    a(href=`#`) #[i.fa.fa-trash]
+
 -
  const columns = [
   {key: 'id', type: 'integer', label: 'Id'},
@@ -5,6 +10,7 @@
   {key: 'number_of_hours', type: 'integer', label: 'Number of Hours'},
   {key: 'organization', type: 'text', label: 'Organization'},
   {key: 'role', type: 'text', label: 'Role'},
+  {key: 'id', type: 'text', label: 'Actions', formatter: 'formatDashboardActions', searchable: false, default: true} 
  ];
 
 doctype html
@@ -27,6 +33,7 @@ html(lang='en')
       .banner
         h2.center Add Volunteer Hours
         a.btn.btn-orange(href=`/user/${__user.id}/edit`) Add Hours
+          i.fa.fa-edit
       +dataTable(columns, data, {
         id: 'dashboard-table',
         class: [],
