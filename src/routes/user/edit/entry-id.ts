@@ -7,7 +7,6 @@ export const editEntry = express.Router();
 /**
  * GET /user/:userId/edit/:entryId
  */
-
 editEntry.get('/user/:userId/edit/:entryId', auth.loggedIn, async(req, res)=> {
     // Retrieve entry Id from params
     const entryId = req.params.entryId;
@@ -39,6 +38,4 @@ editEntry.get('/user/:userId/edit/:entryId', auth.loggedIn, async(req, res)=> {
         entry: entry,
       });
     }
-
-
 });
