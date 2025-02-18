@@ -30,3 +30,4 @@
 * Get npm start to work
 * Create an organization web page
 * Create an organization admin page
+* Create a function that randomly generates dummy entries and user accounts

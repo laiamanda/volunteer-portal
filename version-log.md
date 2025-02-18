@@ -12,3 +12,6 @@
 ### The Developer Are Working On 🚧
   * Fixing some bugs to improve security and logic flows
   * Working on the Profile Page
+    * Changing password
+    * Insert profile Picture
+    * Delete Account
