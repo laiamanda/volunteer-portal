@@ -3,6 +3,7 @@
 ### UpRoar Dashboard (v.1.0.0) - TBD
   * Users are able to register and login into the UpRoar | Volunteer Dashboard
   * Users can now input their hours for their organizations
+  * Users are able to update/delete their hour entries
   * Dashboard displays the user's entries
   * Add a Version-Log Page
   * Developer has also added a simple homepage
@@ -11,5 +12,3 @@
 ### The Developer Are Working On 🚧
   * Fixing some bugs to improve security and logic flows
   * Working on the Profile Page
-  * Working on Update Entries
-  * Working on Delete Entries
