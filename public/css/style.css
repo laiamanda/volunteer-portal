@@ -74,6 +74,7 @@ header {
 .card-list {
   width: 100%;
 }
+
 .card {
   background-color: #525FE1;
   color: #fff;
@@ -87,7 +88,7 @@ header {
 
 /* FONT AWESOME */
 .fa.fa-handshake-o {
-  transform: rotate(-25deg);
+  font-size: 25px;
 }
 
 /* Responsive Layout */
