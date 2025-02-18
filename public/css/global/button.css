@@ -43,3 +43,10 @@
   padding: 1.50px 20px;
   width: 100px;
 }
+
+button.hidden {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}

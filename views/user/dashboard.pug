@@ -1,7 +1,7 @@
 mixin formatDashboardActions(id)
   td.col-actions
     a(href=`/user/${__user.id}/edit/${id}`) #[i.fa.fa-edit]
-    a(href=`#`) #[i.fa.fa-trash]
+    button.hidden(onclick=`deleteRow(event, dashboardTable, '/api/user/dashboard/${encodeURIComponent(id)}')`) #[i.fa.fa-trash]
 
 -
  const columns = [

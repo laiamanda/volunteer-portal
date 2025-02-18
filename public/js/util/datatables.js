@@ -71,3 +71,23 @@ function initializeDataTable(el, columns, opts ={}, callback) {
     }
   });
 }
+
+/**
+ * Prompts the user to delete a row from a DataTable
+ * @param {Event} event the event that triggered this deletion request
+ * @param {DataTables} table the table containing the row to be deleted
+ * @param {string} endpoint the location to which the deletion request will be sent
+ * @return {Promise<void>} a promise that resolves when the deletion is complete
+ */
+async function deleteRow(event, table, endpoint) {
+  if(confirm('Are you sure you would like to delete this row? This action cannot be undone.')) {
+    const response = await fetch(endpoint, {
+      method: 'DELETE',
+    });
+
+    if(response.status === 200) {
+      // If the deletion is successful then remove the row and re-draw the table
+      table.row($(event.target).parents('tr')).remove().draw();
+    }
+  }
+}

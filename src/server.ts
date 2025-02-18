@@ -13,6 +13,7 @@ import store from 'connect-pg-simple';
 import db from './util/database';
 
 /* =============  IMPORT ROUTES ============= */
+import { deleteDashboard } from './routes/api/user/dashboard';
 import { landingPage } from './routes';
 import { versionLog } from './routes/version-log';
 import { dashboard } from './routes/user/dashboard';
@@ -161,6 +162,7 @@ app.use(dashboard);
 app.use(edit);
 app.use(editEntry);
 app.use(profile);
+app.use(deleteDashboard);
 
 // This route will handle all requests that are not handle by others
 app.all('*', (req, res) => {
