@@ -42,4 +42,21 @@ html(lang='en')
                 label Location
               td
                 input(name='location' value=user.location type='location')
-          button.btn.btn-orange(type='submit') Update
+          button.btn.btn-orange(name='update_user' type='submit') Update
+      br
+      hr
+      .flex-row
+        form(method='#')
+          h2 Change Password
+          table.table-layout-form.table-style-default
+            tr
+              td
+                label New Password
+              td
+                input(type='password')
+            tr
+              td
+                label Confirm Password
+              td
+                input(type='password')
+          button.btn.btn-orange(name='change_password' type='submit') Change Password
