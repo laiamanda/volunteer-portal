@@ -23,7 +23,6 @@
   * Add a remember me function when login
   * Add an organization login part
 * Profile Page
-  * Able to change password
   * Able to insert a profile picture
   * Delete Account
 * Create a newsletter email
