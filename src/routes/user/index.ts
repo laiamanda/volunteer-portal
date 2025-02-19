@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import db from '../../util/database';
 import * as auth from '../../util/auth';
+import bcrypt from 'bcrypt';
 
 export const profile = Router();
 
@@ -50,25 +51,57 @@ profile.get('/user/:userId/profile', auth.loggedIn, async (req, res) => {
  * @param res the response sent back to the client
  */
 profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
-  // Update the user's information
-  await db.query(`
-    UPDATE "accounts"."users"
-    SET 
-      "first_name" = $1,
-      "last_name" = $2,
-      "email" = $3,
-      "birthday" = $4,
-      "location" = $5
-    WHERE "id" = $6
-    `, [
-      req.body.first_name || null,
-      req.body.last_name || null ,
-      req.body.email || null,
-      req.body.birthday || null ,
-      req.body.location || null ,
-      req.params.userId,
-    ]);
+  // For the user's form
+  if(req.body.update_user == '') {
+    // Update the user's information
+    await db.query(`
+      UPDATE "accounts"."users"
+      SET 
+        "first_name" = $1,
+        "last_name" = $2,
+        "email" = $3,
+        "birthday" = $4,
+        "location" = $5
+      WHERE "id" = $6
+      `, [
+        req.body.first_name || null,
+        req.body.last_name || null ,
+        req.body.email || null,
+        req.body.birthday || null ,
+        req.body.location || null ,
+        req.params.userId,
+      ]);
 
-  //Redirect the user back to their profile page
-  res.redirect(`/user/${req.params.userId}/profile`);
+    //Redirect the user back to their profile page
+    return res.redirect(`/user/${req.params.userId}/profile`);
+  } else if (req.body.change_password == '') {
+    const saltRounds = 11;
+    if(req.body.new_password === req.body.confirm_password) {
+      bcrypt.genSalt(saltRounds, (error, salt) => {
+        if(error) {
+          return;
+        }
+        bcrypt.hash(req.body.new_password, salt, async(error, hash) => {
+          if(error) {
+            return error;
+          }
+          // Update the user's information
+          await db.query(`
+            UPDATE "accounts"."users"
+            SET 
+              "password" = $1
+            WHERE "id" = $2
+            `, [
+              hash,
+              req.params.userId,
+            ]);
+        });
+      });
+      return res.redirect(`/user/${req.params.userId}/profile`);
+    } else {
+      console.log('Passwords does not match');
+    }
+  } else {
+    return res.render('./error', {error: res.status(404)});
+  }
 });
