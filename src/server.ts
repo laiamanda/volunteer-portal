@@ -20,6 +20,7 @@ import { dashboard } from './routes/user/dashboard';
 import { signUp } from './routes/auth/sign-up';
 import { login } from './routes/auth/login';
 import { logout } from './routes/auth/logout';
+import { admin } from './routes/admin';
 import { edit } from './routes/user/edit';
 import { editEntry } from './routes/user/edit/entry-id';
 import { profile } from './routes/user/index';
@@ -157,6 +158,8 @@ app.use(versionLog);
 app.use(signUp);
 app.use(login);
 app.use(logout);
+/*=== ADMIN ROUTES === */
+app.use(admin);
 /*=== USER ROUTES === */
 app.use(dashboard);
 app.use(edit);
