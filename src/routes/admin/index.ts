@@ -1,5 +1,7 @@
 import { Router } from 'express';
 import db from '../../util/database';
+import { initMailer } from '../../util/mails';
+
 export const admin = Router();
 
 /**
@@ -8,15 +10,17 @@ export const admin = Router();
  * @param res the response sent back to the client
  */
 admin.get('/admin', async(req, res) => {
-    const today = new Date();
+
+    initMailer();
+    // const today = new Date();
 
     // Create a function to randomly create entries
-    let user = '';
-    let number_of_hours = Math.floor(Math.random() * 24) + 1;
-    let organization = 'test';
-    let role = 'volunteer';
-    let date = today.getDate();
-    let description = 'words';
+    // let user = '';
+    // let number_of_hours = Math.floor(Math.random() * 24) + 1;
+    // let organization = 'test';
+    // let role = 'volunteer';
+    // let date = today.getDate();
+    // let description = 'words';
 
     // Insert the entry into the database
     // const row = await db.query(`
@@ -38,7 +42,7 @@ admin.get('/admin', async(req, res) => {
     //   ]
     // );
 
-    console.log(date);
+    // console.log(date);
 
     res.send('This is Admin Page');
 });
