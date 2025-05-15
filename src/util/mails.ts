@@ -1,4 +1,7 @@
 const nodemailer = require("nodemailer");
+import * as fs from "fs";
+const pug = require('pug');
+const path = require("path");
 
 export async function initMailer() {
   // Initiate transporter
@@ -15,14 +18,14 @@ export async function initMailer() {
   // Verify the connection
   await transporter.verify();
   console.log('Serer is ready to take our message');
-  
+
   try {
     const info = await transporter.sendMail({
-      from: '"Example Team" <amanda.lai.dev@gmail.com>', // sender address
+      from: '"UpRoar" <amanda.lai.dev@gmail.com>', // sender address
       to: "legoamanda99@gmail.com", // list of receivers
       subject: "Hello World", // subject line
       text: "Hello World?", // plain text body
-      html: "<b>Hello World</b>", // html body
+      html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug')
     });
 
     console.log("message Sent: " + info.messageId);
@@ -30,4 +33,6 @@ export async function initMailer() {
   } catch (err) {
     console.log('Error while sending mail', err);
   }
+
+ // console.log(path.join(__dirname, '../../'));
 }

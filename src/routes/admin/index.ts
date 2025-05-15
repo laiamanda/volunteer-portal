@@ -11,6 +11,7 @@ export const admin = Router();
  */
 admin.get('/admin', async(req, res) => {
 
+    // Testing mail
     initMailer();
     // const today = new Date();
 
