@@ -25,7 +25,12 @@ export async function initMailer() {
       to: "legoamanda99@gmail.com", // list of receivers
       subject: "Hello World", // subject line
       text: "Hello World?", // plain text body
-      html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug')
+      html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug', {
+        title: 'This is a test',
+        name: 'Amanda Lai',
+        message: 'hello world',
+        website: 'https://www.google.com',
+      })
     });
 
     console.log("message Sent: " + info.messageId);
