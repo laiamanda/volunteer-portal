@@ -17,24 +17,12 @@ export async function initMailer() {
   
   // Verify the connection
   await transporter.verify();
-  console.log('Serer is ready to take our message');
+  console.log('Server is ready to take our message');
 
   try {
-    // const info = await transporter.sendMail({
-    //   from: '"UpRoar" <amanda.lai.dev@gmail.com>', // sender address
-    //   to: "legoamanda99@gmail.com", // list of receivers
-    //   subject: "Hello World", // subject line
-    //   text: "Hello World?", // plain text body
-    //   html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug', {
-    //     title: 'UpRoar Newsletter',
-    //     name: 'Amanda Lai',
-    //     message: 'We update the website. Check it out',
-    //     website: 'https://www.google.com',
-    //   })
-    // });
     const info = await transporter.sendMail({
-      from: '"UpRoar" <amanda.lai.dev@gmail.com>', // sender address
-      to: "legoamanda99@gmail.com", // list of receivers
+      from: `"UpRoar" <${process.env.FROM_EMAIL}>`, // sender address
+      to: process.env.TO_EMAIL, // list of receivers
       subject: "UpRoar 1st Newsletter", // subject line
       text: "Hello, This is UpRoar's Newsletter", // plain text body
       html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug', {

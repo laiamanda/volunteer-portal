@@ -13,6 +13,7 @@
 * Create a password validator
 * Create a function that detects if the username is already taken ✔️
 * During default sign-up, add verification to confirm the email
+* Create a newsletter email ✔️
 
 ## To Do Tasks:
 * Edit Page
@@ -25,7 +26,6 @@
 * Profile Page
   * Able to insert a profile picture
   * Delete Account
-* Create a newsletter email
 * Get npm start to work
 * Create an organization web page
 * Create an organization admin page
