@@ -20,15 +20,26 @@ export async function initMailer() {
   console.log('Serer is ready to take our message');
 
   try {
+    // const info = await transporter.sendMail({
+    //   from: '"UpRoar" <amanda.lai.dev@gmail.com>', // sender address
+    //   to: "legoamanda99@gmail.com", // list of receivers
+    //   subject: "Hello World", // subject line
+    //   text: "Hello World?", // plain text body
+    //   html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug', {
+    //     title: 'UpRoar Newsletter',
+    //     name: 'Amanda Lai',
+    //     message: 'We update the website. Check it out',
+    //     website: 'https://www.google.com',
+    //   })
+    // });
     const info = await transporter.sendMail({
       from: '"UpRoar" <amanda.lai.dev@gmail.com>', // sender address
       to: "legoamanda99@gmail.com", // list of receivers
-      subject: "Hello World", // subject line
-      text: "Hello World?", // plain text body
+      subject: "UpRoar 1st Newsletter", // subject line
+      text: "Hello, This is UpRoar's Newsletter", // plain text body
       html: pug.renderFile(path.join(__dirname, '../../') + 'views/templates/newsletter/newsletter.pug', {
-        title: 'This is a test',
+        title: 'UpRoar Newsletter',
         name: 'Amanda Lai',
-        message: 'hello world',
         website: 'https://www.google.com',
       })
     });
@@ -38,6 +49,4 @@ export async function initMailer() {
   } catch (err) {
     console.log('Error while sending mail', err);
   }
-
- // console.log(path.join(__dirname, '../../'));
 }
