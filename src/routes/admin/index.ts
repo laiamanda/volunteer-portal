@@ -12,38 +12,58 @@ export const admin = Router();
 admin.get('/admin', async(req, res) => {
 
     // Testing mail
-    initMailer();
-    // const today = new Date();
+    // initMailer();
+    
 
-    // Create a function to randomly create entries
-    // let user = '';
-    // let number_of_hours = Math.floor(Math.random() * 24) + 1;
-    // let organization = 'test';
-    // let role = 'volunteer';
-    // let date = today.getDate();
-    // let description = 'words';
-
-    // Insert the entry into the database
-    // const row = await db.query(`
-    //   INSERT INTO "volunteer_entries"."entries" (
-    //     "user",
-    //     "number_of_hours",
-    //     "organization",
-    //     "role",
-    //     "date",
-    //     "description"
-    //   ) VALUES($1, $2, $3, $4, $5, $6) 
-    //   `, [
-    //     user,
-    //     number_of_hours ,
-    //     organization,
-    //     role,
-    //     date,
-    //     description,
-    //   ]
-    // );
-
-    // console.log(date);
+    generateEntries();
 
     res.send('This is Admin Page');
 });
+
+async function generateEntries() {
+    // Create a function to randomly create entries
+    const today = new Date();
+    // Select a random user
+    let user = (await db.query(`
+        SELECT "username"
+        FROM "accounts"."users"
+        ORDER BY RANDOM()
+        LIMIT 1
+    `)).rows[0];
+
+    let number_of_hours = Math.floor(Math.random() * 24) + 1;
+
+    // Select a random organizations
+    let organization = (await db.query(`
+      SELECT name
+      FROM "organizations"."entries"
+      ORDER BY RANDOM()
+      LIMIT 1
+    `)).rows[0];
+
+    let role = 'volunteer';
+
+    let day = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
+
+    let description = 'words words words';
+
+    // Insert the entry into the database
+    const row = await db.query(`
+      INSERT INTO "volunteer_entries"."entries" (
+        "user",
+        "number_of_hours",
+        "organization",
+        "role",
+        "date",
+        "description"
+      ) VALUES($1, $2, $3, $4, $5, $6) 
+      `, [
+        user.username,
+        number_of_hours ,
+        organization.name,
+        role,
+        day,
+        description,
+      ]
+    );
+}
