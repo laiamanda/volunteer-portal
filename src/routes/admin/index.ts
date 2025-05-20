@@ -1,6 +1,11 @@
+const generator = require('generate-password');
+
 import { Router } from 'express';
 import db from '../../util/database';
 import { initMailer } from '../../util/mails';
+import { generateFromEmail, generateUsername } from "unique-username-generator";
+import bcrypt from 'bcrypt';
+import { hash } from 'crypto';
 
 export const admin = Router();
 
@@ -14,7 +19,8 @@ admin.get('/admin', async(req, res) => {
     // Testing mail
     // initMailer();
     
-    generateEntries(3);
+    // generateEntries(3);
+    generateUsers(5);
 
     res.send('This is Admin Page');
 });
@@ -68,4 +74,56 @@ async function generateEntries(amount: number) {
         ]);
       amount--;
   }
+}
+
+// Generate random users
+async function generateUsers(amount: number) {
+    while (amount > 0) {
+        // generateUsername(separator, number of random digits, maximum length)
+        let username = generateUsername("_", 2, 12);
+
+        let password = generator.generate({
+            length: 12,
+            numbers: true,
+            symbols: true,
+            excludeSimilarCharacters: true,
+        });
+
+        let email = username + '@email.com';
+
+        const entry = await db.query(`
+        INSERT INTO "accounts"."users" (
+            "username",
+            "password",
+            "email"
+        ) VALUES ($1, $2, $3)
+        `, [
+            username,
+            password,
+            email,
+        ]);
+
+        amount--;
+    }
+   return;
+}
+
+// Hash password
+// To do: Figure this out...later
+async function hashPassword(password: Buffer) {
+    const saltRounds = 10;
+    try {
+        bcrypt.genSalt(saltRounds, (error, salt) => {
+            if (error) {
+                return;
+            }
+            bcrypt.hash(password, salt, async(error, hash) => {
+                console.log(hash);
+                return hash;
+            })
+        })
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
 }
