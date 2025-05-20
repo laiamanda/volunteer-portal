@@ -14,56 +14,58 @@ admin.get('/admin', async(req, res) => {
     // Testing mail
     // initMailer();
     
-
-    generateEntries();
+    generateEntries(3);
 
     res.send('This is Admin Page');
 });
 
-async function generateEntries() {
-    // Create a function to randomly create entries
-    const today = new Date();
-    // Select a random user
-    let user = (await db.query(`
-        SELECT "username"
-        FROM "accounts"."users"
+async function generateEntries(amount: number) {
+    while(amount > 0) {
+        // Create a function to randomly create entries
+        const today = new Date();
+        // Select a random user
+        let user = (await db.query(`
+            SELECT "username"
+            FROM "accounts"."users"
+            ORDER BY RANDOM()
+            LIMIT 1
+        `)).rows[0];
+
+        let number_of_hours = Math.floor(Math.random() * 24) + 1;
+
+        // Select a random organizations
+        let organization = (await db.query(`
+        SELECT name
+        FROM "organizations"."entries"
         ORDER BY RANDOM()
         LIMIT 1
-    `)).rows[0];
+        `)).rows[0];
 
-    let number_of_hours = Math.floor(Math.random() * 24) + 1;
+        let role = 'volunteer';
 
-    // Select a random organizations
-    let organization = (await db.query(`
-      SELECT name
-      FROM "organizations"."entries"
-      ORDER BY RANDOM()
-      LIMIT 1
-    `)).rows[0];
+        // Get current date
+        let day = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
 
-    let role = 'volunteer';
+        let description = 'words words words';
 
-    let day = today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
-
-    let description = 'words words words';
-
-    // Insert the entry into the database
-    const row = await db.query(`
-      INSERT INTO "volunteer_entries"."entries" (
-        "user",
-        "number_of_hours",
-        "organization",
-        "role",
-        "date",
-        "description"
-      ) VALUES($1, $2, $3, $4, $5, $6) 
-      `, [
-        user.username,
-        number_of_hours ,
-        organization.name,
-        role,
-        day,
-        description,
-      ]
-    );
+        // Insert the entry into the database
+        const row = await db.query(`
+        INSERT INTO "volunteer_entries"."entries" (
+            "user",
+            "number_of_hours",
+            "organization",
+            "role",
+            "date",
+            "description"
+        ) VALUES($1, $2, $3, $4, $5, $6) 
+        `, [
+            user.username,
+            number_of_hours ,
+            organization.name,
+            role,
+            day,
+            description,
+        ]);
+      amount--;
+  }
 }
