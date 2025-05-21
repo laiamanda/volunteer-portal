@@ -14,6 +14,7 @@
 * Create a function that detects if the username is already taken ✔️
 * During default sign-up, add verification to confirm the email
 * Create a newsletter email ✔️
+* Create a function that randomly generates dummy entries and user accounts ✔️
 
 ## To Do Tasks:
 * Edit Page
@@ -29,4 +30,3 @@
 * Get npm start to work
 * Create an organization web page
 * Create an organization admin page
-* Create a function that randomly generates dummy entries and user accounts

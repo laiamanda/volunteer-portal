@@ -20,7 +20,7 @@ admin.get('/admin', async(req, res) => {
     // initMailer();
     
     // generateEntries(3);
-    generateUsers(5);
+    // generateUsers(5);
 
     res.send('This is Admin Page');
 });
