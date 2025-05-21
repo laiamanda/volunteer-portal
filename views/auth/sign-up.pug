@@ -12,32 +12,33 @@ html(lang='en')
   head
     title Sign Up | UpRoar
     include /global/head
+    script(src='/js/sign-up.js' type='text/javascript')
   body
     include /global/header
     .container.center
       h1 Sign Up
       .flex-row
-        form(method='post')
+        form(method='#')
           table.table-layout-form.table-style-default
-            tr
-              td
-                label(for='username') Username
-              td
-                input(id='username' name='username' type='text' required)
-            tr
-              td
-                label(for='email') Email
-              td
-                input(id='email' name='email' type='email' required)
+            //- tr
+            //-   td
+            //-     label(for='username') Username
+            //-   td
+            //-     input(id='username' name='username' type='text' required)
+            //- tr
+            //-   td
+            //-     label(for='email') Email
+            //-   td
+            //-     input(id='email' name='email' type='email' required)
             tr
               td
                 label(for='password') Password
               td
                 input(id='password' name='password' type='password'  required)
-            tr
-              td
-                label(for='confirm_ password') Confirm Password
-              td
-                input(id='confirm_password' name='confirm_password' type='password'  required)
+            //- tr
+            //-   td
+            //-     label(for='confirm_ password') Confirm Password
+            //-   td
+            //-     input(id='confirm_password' name='confirm_password' type='password'  required)
           button.btn.btn-green(type='submit') Sign Up
       a.link(href='/auth/login') Already have an account? Login
