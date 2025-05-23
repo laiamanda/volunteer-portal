@@ -12,11 +12,19 @@ html(lang='en')
   head
     title Sign Up | UpRoar
     include /global/head
+    link(rel='stylesheet' type='text/css' href='/css/sign-up.css')
     script(src='/js/sign-up.js' type='text/javascript')
   body
     include /global/header
     .container.center
       h1 Sign Up
+      .flex-row  
+        div(id='message')
+          h3 Password contains:
+          p(id='letter' class='invalid') Requires a  lowercase letter
+          p(id='capital' class='invalid') Requires a uppercase letter
+          p(id='number' class='invalid') Requires a number
+          p(id='length' class='invalid') Minimum 8 characters
       .flex-row
         form(method='#')
           table.table-layout-form.table-style-default
