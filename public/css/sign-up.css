@@ -19,15 +19,15 @@
 .valid:before {
   position: relative;
   left: -35px;
-  content: "&#10004;";
+  content: '\2714';
 }
 
 .invalid {
-    color: red;
+  color: red;
 }
 
 .invalid:before {
   position: relative;
   left: -35px;
-  content: "&#10006;";
+  content: '\2718';
 }
