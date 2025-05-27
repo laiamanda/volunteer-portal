@@ -10,7 +10,7 @@
 * Create a change-log page ✔️
 * Create a error handling system that emails the software developer for issues
 * Create a home-page ✔️
-* Create a password validator
+* Create a password validator ✔️
 * Create a function that detects if the username is already taken ✔️
 * During default sign-up, add verification to confirm the email
 * Create a newsletter email ✔️
@@ -20,7 +20,6 @@
 * Edit Page
   * Style form to match better to Figma design
 * Auth
-  * Make users have their password to include symbol, number, letter, upper and lower case - Password validation
   * Secure Cookies Bug
   * Add a remember me function when login
   * Add an organization login part
