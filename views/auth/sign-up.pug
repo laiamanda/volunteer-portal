@@ -26,27 +26,27 @@ html(lang='en')
           p(id='number' class='invalid') Requires a number
           p(id='length' class='invalid') Minimum 8 characters
       .flex-row
-        form(method='#')
+        form(method='post')
           table.table-layout-form.table-style-default
-            //- tr
-            //-   td
-            //-     label(for='username') Username
-            //-   td
-            //-     input(id='username' name='username' type='text' required)
-            //- tr
-            //-   td
-            //-     label(for='email') Email
-            //-   td
-            //-     input(id='email' name='email' type='email' required)
+            tr
+              td
+                label(for='username') Username
+              td
+                input(id='username' name='username' type='text' required)
+            tr
+              td
+                label(for='email') Email
+              td
+                input(id='email' name='email' type='email' required)
             tr
               td
                 label(for='password') Password
               td
                 input(id='password' name='password' type='password'  required)
-            //- tr
-            //-   td
-            //-     label(for='confirm_ password') Confirm Password
-            //-   td
-            //-     input(id='confirm_password' name='confirm_password' type='password'  required)
+            tr
+              td
+                label(for='confirm_ password') Confirm Password
+              td
+                input(id='confirm_password' name='confirm_password' type='password'  required)
           button.btn.btn-green(type='submit') Sign Up
       a.link(href='/auth/login') Already have an account? Login
