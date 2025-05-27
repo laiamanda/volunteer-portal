@@ -22,7 +22,7 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
   const saltRounds = 10;
   let isValidUsername = false;
 
-  // Query the database to see if the username already exists
+  // // Query the database to see if the username already exists
   let existUsername = (await db.query(`
     SELECT "username"
     FROM "accounts"."users"
@@ -40,7 +40,13 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
   }
 
   // Check if the password has not requirements
-  
+  // (?=.*[!@#$%^&*]) --> Maybe later?
+  const passwordRegExp = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+
+  let passwordMatch: RegExpMatchArray | null = req.body.password.match(passwordRegExp);
+  if(!passwordMatch) {
+    return res.redirect('/auth/sign-up/?error=password_weak');
+  }
 
   // Checks if the password and confirm password matches and if the isValidUsername is valid
   if((req.body.password === req.body.confirm_password) && (isValidUsername == true)) {
