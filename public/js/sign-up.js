@@ -1,13 +1,20 @@
-// alert('Connected');
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbers = /[0-9]/g;
 
-// password.onfocus = function() {
-//     $('#message').style.display='block';
-// }
-
 $(document).ready(function(){
+
+    // Hide message
+    $('#password').blur(function(){
+        $('#message').css({'display': 'none'});
+    });
+
+    // Display Password Validation
+    $('#password').focus(function(){
+        $('#message').css({'display': 'block'});
+    });
+
+
     $('#password').keyup(function(){
         const password = this.value;
 
@@ -22,7 +29,6 @@ $(document).ready(function(){
         
         // Validate lowerCase
         if(password.match(lowerCaseLetters)) {
-            console.log('It has lowercase');
             $('#letter').removeClass('invalid');
             $('#letter').addClass('valid');
         } else {
@@ -39,12 +45,11 @@ $(document).ready(function(){
             $('#capital').addClass('invalid');
         }
 
+        // Validate numbers
         if(password.match(numbers)) {
-            console.log('It has numbers');
             $('#number').removeClass('invalid');
             $('#number').addClass('valid');
         } else {
-            console.log('No numbers');
             $('#number').removeClass('valid');
             $('#number').addClass('invalid');
         }
