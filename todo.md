@@ -21,7 +21,6 @@
   * Style form to match better to Figma design
 * Auth
   * Secure Cookies Bug
-  * Add a remember me function when login
   * Add an organization login part
 * Profile Page
   * Able to insert a profile picture
