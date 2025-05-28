@@ -75,7 +75,8 @@ signUp.post('/auth/sign-up', async (req: Request, res: Response) => {
             ]);
         });
       });
-      return res.redirect('/user/dashboard');
+      // return res.redirect('/user/dashboard');
+      return res.redirect('/auth/login');
     } catch(error) {
       return res.redirect('/auth/sign-up/?error=error');
     }
