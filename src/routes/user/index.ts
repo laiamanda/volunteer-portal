@@ -74,7 +74,9 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
 
     //Redirect the user back to their profile page
     return res.redirect(`/user/${req.params.userId}/profile`);
-  } else if (req.body.change_password == '') {
+  } 
+  // Changing passwords
+  else if (req.body.change_password == '') {
     const saltRounds = 11;
     if(req.body.new_password === req.body.confirm_password) {
       bcrypt.genSalt(saltRounds, (error, salt) => {
@@ -101,7 +103,15 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
     } else {
       console.log('Passwords does not match');
     }
-  } else {
-    return res.render('./error', {error: res.status(404)});
   }
+  // User Delete Account
+  else if (req.body.delete_account= '') {
+    console.log('Delete Account');
+    // Sign-out
+    // res.redirect('/auth/logout');
+  } 
+  else {
+    return res.render('./error', {error: res.status(404)});
+  } 
+  
 });
