@@ -21,6 +21,8 @@
 * Edit Page
   * Style form to match better to Figma design
 * Auth
+  * Add Remember Username
+  * Add verification to confirm the email
   * Secure Cookies Bug
 * Profile Page
   * Able to insert a profile picture
@@ -28,4 +30,5 @@
   * Add an organization login part
   * Create an organization web page
   * Create an organization admin page
+* Add a error handing systems that emails the software developer for issues
 * Get npm start to work
