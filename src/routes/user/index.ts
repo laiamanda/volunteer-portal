@@ -90,8 +90,7 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
           // Update the user's information
           await db.query(`
             UPDATE "accounts"."users"
-            SET 
-              "password" = $1
+            SET "password" = $1
             WHERE "id" = $2
             `, [
               hash,
@@ -118,7 +117,7 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
 
     // Log out the user
     res.clearCookie('connect.sid');
-    // Destory Session
+    // Destroy Session
     req.session.destroy(function(error) {
       if(error) {
         console.log(error);

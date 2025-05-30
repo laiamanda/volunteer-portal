@@ -8,23 +8,24 @@
 ## Extra Goals:
 * Create a web-scrapper to scrape all non-profits and store it into the database, so that it can be a drop-down menu option✔️
 * Create a change-log page ✔️
-* Create a error handling system that emails the software developer for issues
 * Create a home-page ✔️
 * Create a password validator ✔️
 * Create a function that detects if the username is already taken ✔️
-* During default sign-up, add verification to confirm the email
 * Create a newsletter email ✔️
 * Create a function that randomly generates dummy entries and user accounts ✔️
+* Able to Delete User's Account on the Profile Page ✔️
+* Create a error handling system that emails the software developer for issues
+* During default sign-up, add verification to confirm the email
 
 ## To Do Tasks:
 * Edit Page
   * Style form to match better to Figma design
 * Auth
   * Secure Cookies Bug
-  * Add an organization login part
 * Profile Page
   * Able to insert a profile picture
-  * Delete Account
+* Organization Page
+  * Add an organization login part
+  * Create an organization web page
+  * Create an organization admin page
 * Get npm start to work
-* Create an organization web page
-* Create an organization admin page
