@@ -43,8 +43,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(session({
     name: 'volunteer-portal-session',
     secret: 'secret',
-    resave: true,
-    saveUninitialized: true,
+    resave: false, // Init - true
+    saveUninitialized: false, // Init - true
     // cookie: { /* TO DO: Figure out cookies */
     //   secure: true,
     // },
@@ -109,7 +109,8 @@ passport.deserializeUser(async (id: string, cb) => {
       console.log('Error when selecting user on session deserialize: ' + err);
       return cb(err);
     }
-    cb(null, result.rows[0]);
+    // return cb(null, result.rows[0]);
+    return cb(null, result.rows[0]);
   });
 });
 

@@ -105,10 +105,27 @@ profile.post('/user/:userId/profile', auth.loggedIn, async(req, res) => {
     }
   }
   // User Delete Account
-  else if (req.body.delete_account= '') {
-    console.log('Delete Account');
-    // Sign-out
-    // res.redirect('/auth/logout');
+  else if (req.body.delete_account == '') {
+    // Delete the user from the database
+    await db.query( 
+      `
+      DELETE FROM "accounts"."users"
+      WHERE "id" = $1
+      `, [
+        req.params.userId,
+      ]
+    );
+
+    // Log out the user
+    res.clearCookie('connect.sid');
+    // Destory Session
+    req.session.destroy(function(error) {
+      if(error) {
+        console.log(error);
+      }
+    });
+    // Redirect back to the homepage
+    return res.redirect('/');
   } 
   else {
     return res.render('./error', {error: res.status(404)});
